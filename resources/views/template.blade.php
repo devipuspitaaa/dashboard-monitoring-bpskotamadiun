@@ -40,12 +40,12 @@ Coded by www.creative-tim.com
       <div class="logo">
         <a href="https://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="../assets/img/bps.png">
           </div>
           <!-- <p>CT</p> -->
         </a>
         <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          KELURAHAN CANTIK
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -63,19 +63,19 @@ Coded by www.creative-tim.com
           <li>
             <a href="./icons.html">
               <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
+              <p>Home</p>
             </a>
           </li>
           <li>
             <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
+              <i class="nc-icon nc-tile-56"></i>
+              <p>Data Statistik</p>
             </a>
           </li>
           <li>
             <a href="./notifications.html">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Tentang</p>
             </a>
           </li>
           <li>
