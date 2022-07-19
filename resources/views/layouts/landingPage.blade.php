@@ -25,6 +25,8 @@
                 <div class="masthead-heading text-uppercase">Selamat Datang</div>
                 <div class="masthead-subheading">di Portal Aplikasi dan Sistem</div>
                 <div class="masthead-subheading">Informasi BPS Kota Madiun</div>
+                <!--<div class="masthead-subheading"><img src="../assets/img/bps.png"></div>-->
+                
                 
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Mulai</a>
             </div>
