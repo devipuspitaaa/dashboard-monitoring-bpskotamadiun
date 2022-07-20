@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIMENIK | Sistem Monitoring dan Evaluasi Kelurahan Cantik</title>
+        <title>OPERA CANDI | Sistem Monitoring & Evaluasi Kelurahan Cantik</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -23,8 +23,9 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-heading text-uppercase">Selamat Datang</div>
-                <div class="masthead-subheading">di Portal Aplikasi dan Sistem</div>
-                <div class="masthead-subheading">Informasi BPS Kota Madiun</div>
+                <div class="masthead-subheading text-uppercase">di Portal Monitoring & Evaluasi</div>
+                <div class="masthead-subheading text-uppercase">OPERA CANDI</div>
+                <div class="masthead-subheading">(Optimalisasi Petugas Kelurahan Cinta Statistik Kota Madiun)</div>
                 <!--<div class="masthead-subheading"><img src="../assets/img/bps.png"></div>-->
                 
                 
