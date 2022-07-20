@@ -162,7 +162,6 @@ Coded by www.creative-tim.com
           <div class="row">
             <nav class="footer-nav">
               <ul>
-                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
                 <li><a href="https://madiunkota.bps.go.id/" target="_blank">Website BPS Kota Madiun</a></li>
               </ul>
             </nav>
