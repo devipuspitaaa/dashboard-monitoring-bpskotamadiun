@@ -22,11 +22,9 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-heading text-uppercase">Selamat Datang</div>
-                <div class="masthead-subheading text-uppercase">di Portal Monitoring & Evaluasi</div>
-                <div class="masthead-subheading text-uppercase">OPERA CANDI</div>
-                <div class="masthead-subheading">(Optimalisasi Petugas Kelurahan Cinta Statistik Kota Madiun)</div>
-                <!--<div class="masthead-subheading"><img src="../assets/img/bps.png"></div>-->
+              <div class="masthead-heading">SELAMAT DATANG di Portal Monitoring & Evaluasi</div>
+              <div class="masthead-heading">OPERA CANDI</div>
+              <div class="masthead-subheading">(Optimalisasi Petugas Kelurahan Cinta Statistik Kota Madiun)</div>
                 
                 
                 <a class="btn btn-primary btn-xl text-uppercase" href="/dashboard">Mulai</a>
