@@ -28,7 +28,7 @@
                 <!--<div class="masthead-subheading"><img src="../assets/img/bps.png"></div>-->
                 
                 
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Mulai</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="/login">Mulai</a>
             </div>
         </header>
         

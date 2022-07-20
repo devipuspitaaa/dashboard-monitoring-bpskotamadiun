@@ -11410,8 +11410,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  /*background-color: rgb(60, 241, 106); */
-  background-image: url("../assets/img/bps1.jpg"); 
+  background-image: url("../assets/img/bps-bg.jpg"); 
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
