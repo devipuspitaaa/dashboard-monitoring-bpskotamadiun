@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="form-title">W E L C O M E</h1>
+                    <h3 class="form-title">W E L C O M E</h3>
 
                 </div>
                 <div class="card-body">

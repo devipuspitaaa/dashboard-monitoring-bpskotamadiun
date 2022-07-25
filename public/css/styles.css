@@ -4569,6 +4569,8 @@ textarea.form-control-lg {
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  align-items: center;
+
 }
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
@@ -11433,8 +11435,9 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
+    padding-top: 8rem;
     padding-bottom: 12.5rem;
+
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;

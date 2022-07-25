@@ -17,17 +17,17 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('layouts.landingPage');
 });
-// Route::get('/login', function () {
-//     return view('login');
+
+// Route::get('/register', function () {
+//     return view('register');
 // });
 
-Route::get('/register', function () {
-    return view('register');
-});
 Auth::routes();
-
+Route::get('/tentang', function () {
+    return view('tentang');
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get( '/tentang', [\App\Http\Controllers\TentangController::class, 'index'])->name('tentang');
+// Route::get('/tentang', [\App\Http\Controllers\TentangController::class, 'index'])->name('tentang');
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
