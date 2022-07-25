@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-16" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -22,12 +22,10 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-heading">SELAMAT DATANG di Portal Monitoring & Evaluasi</div>
-                <div class="masthead-heading">OPERA CANDI</div>
-                <div class="masthead-subheading">(Optimalisasi Petugas Kelurahan Cinta Statistik Kota Madiun)</div>
-                
-                
-                <a class="btn btn-primary btn-xl text-uppercase" href="/login">Mulai</a>
+              <h3>PETA KOTA MADIUN</h3>
+              <div class="embed-responsive embed-responsive-21by9">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63271.893040272866!2d111.49303169146093!3d-7.629975418913439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79be537c813a33%3A0xafe2f173545a53ae!2sMadiun%2C%20Kota%20Madiun%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1658296052969!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
         </header>
         
