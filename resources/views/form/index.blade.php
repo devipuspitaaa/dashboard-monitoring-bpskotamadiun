@@ -1,7 +1,10 @@
-{{-- @extends('layouts.app')
+
 
 @extends('template')
 @section('content')
+<br></br>
+<br></br>
+<br></br>
 <div class="row g-2">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left mt-2">
@@ -34,23 +37,34 @@
         @endif
 
         <table class="table table-bordered">
-
+                     <tr>
+                        <th>Nama Kelurahan</th>
+                        <th>Nama Survei</th>
+                        <th>Total Target</th>
+                        <th>Total Target Revisi</th>
+                        <th>Total Petugas</th>
+                        <th>Total Petugas Revisi</th>
+                        <th>Jangka Hari Penyelesaian</th>
+                        <th>Jangka Hari Penyelesaian Revisi</th>
+                        <th>Target Petugas</th>
+                        <th width="250px">Action</th>
+                    </tr>
             @foreach ($form as $data)
             <tr>
 
-                <td><b>{{ $data->nama_kelurahan }}</b><br><br>
-                {{ $data->nama_survei }}
-                {{ $data->total_target }}
-                {{ $data->ttl_target_revisi }}
-                {{ $data->total_petugas }}
-                {{ $data->ttl_petugas_revisi }}
-                {{ $data->jh_penyelesaian }}
-                {{ $data->jhp_revisi }}
-                {{ $data->target_petugas }}
+            <td>{{ $data->nama_kelurahan }}</td>
+            <td>{{ $data->nama_survei }}</td>
+            <td>{{ $data->total_target }}</td>
+            <td>{{ $data->ttl_target_revisi }}</td>
+            <td>{{ $data->total_petugas }}</td>
+            <td>{{ $data->ttl_petugas_revisi }}</td>
+            <td>{{ $data->jh_penyelesaian }}</td>
+            <td>{{ $data->jhp_revisi }}</td>
+            <td>{{ $data->target_petugas }}</td>
 
                 <td>
                 <form action="{{ route('form.destroy',$data->id) }}" method="POST">
-
+                    
                     <a class="btn btn-primary" href="{{ route('form.edit',$data->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')

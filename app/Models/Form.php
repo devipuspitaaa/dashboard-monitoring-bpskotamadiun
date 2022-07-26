@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Form extends Model
 {
     use HasFactory;
-    protected $table = "inputdata";
+    protected $table = "Form";
     public $timestamps = false;
     protected $primaryKey = 'id';
 

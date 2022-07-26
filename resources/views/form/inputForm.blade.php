@@ -1,7 +1,10 @@
-{{-- @extends('layouts.app')
+
 
 @extends('template')
 @section('content')
+<br></br>
+<br></br>
+
 {{-- Input Data section begin --}}
     <section class="featured spad">
         <div class="container">

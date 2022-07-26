@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,4 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/form', [App\Http\Controllers\FormController::class, 'index'])->name('form');
+Route::resource('form',  FormController::class);
+Route::get('inputForm', function () {
+    return view('form.inputForm');
+});
