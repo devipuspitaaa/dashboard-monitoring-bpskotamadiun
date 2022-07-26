@@ -53,7 +53,7 @@
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="/form">
               <i class="nc-icon nc-paper"></i>
               <p>Input Data</p>
             </a>
