@@ -6,8 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="form-title">W E L C O M E</h3>
-
+                    <center><h3 class="form-title">W E L C O M E</h3></center>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
