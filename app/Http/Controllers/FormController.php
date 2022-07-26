@@ -16,12 +16,12 @@ class FormController extends Controller
     public function index(Request $request)
     {
         if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $from = Form::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
+            $form = Form::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $from = Form::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $form = Form::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
         }
-        return view('form.index', compact('from'));
+        return view('form.index', compact('form'));
     }
 
     /**
