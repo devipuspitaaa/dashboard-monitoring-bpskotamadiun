@@ -25,7 +25,9 @@
 
                 <div class="float-right my-3 mx-5">
                     <a class="btn btn-success" href="{{'/inputForm'}}"> Tambah Data</a>
+                    <a class="btn btn-success" href="{{'/inputPegawai'}}"> Input Petugas</a>
                 </div>
+                
             </div>
         </div>
         <div class="col-xl-12 col-md-2">

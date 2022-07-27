@@ -41,7 +41,7 @@
             </a>
           </li>
           <li class="active ">
-            <a href="/dashboard">
+            <a href="/home">
               <i class="nc-icon nc-chart-bar-32"></i>
               <p>Dashboard</p>
             </a>
