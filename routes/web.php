@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,4 +37,9 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 Route::resource('form',  FormController::class);
 Route::get('inputForm', function () {
     return view('form.inputForm');
+});
+
+Route::resource('pegawai', PegawaiController::class);
+Route::get('inputPegawai', function () {
+    return view('pegawai.create');
 });

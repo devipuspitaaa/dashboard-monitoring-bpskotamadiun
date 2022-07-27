@@ -58,12 +58,12 @@
               <p>Input Data</p>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="./typography.html">
               <i class="nc-icon nc-caps-small"></i>
               <p>Tentang</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>

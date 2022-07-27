@@ -1,5 +1,3 @@
-
-
 @extends('template')
 @section('content')
 <br></br>
