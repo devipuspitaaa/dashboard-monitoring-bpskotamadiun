@@ -39,7 +39,12 @@ Route::get('inputForm', function () {
     return view('form.inputForm');
 });
 
-Route::resource('pegawai', PegawaiController::class);
-Route::get('inputPegawai', function () {
-    return view('pegawai.create');
+Route::resource('petugas', PegawaiController::class);
+Route::get('inputPetugas', function () {
+    return view('petugas.create');
+});
+
+Route::resource('pengawas', PegawaiController::class);
+Route::get('inputPengawas', function () {
+    return view('pengawas.create');
 });

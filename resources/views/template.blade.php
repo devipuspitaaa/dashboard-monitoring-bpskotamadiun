@@ -9,8 +9,7 @@
   <title>
     OPERA CANDI | BPS KOTA MADIUN
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-    name='viewport' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -55,15 +54,33 @@
           <li>
             <a href="/form">
               <i class="nc-icon nc-paper"></i>
-              <p>Input Data</p>
+              <p>Input Survei</p>
             </a>
           </li>
-          {{-- <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Tentang</p>
+          <li>
+            <a data-toggle="collapse" href="#componentsExamples" aria-expanded="true" class="">
+              <i class="nc-icon nc-layout-11"></i>
+              <p>
+                Input Data <b class="caret"></b>
+              </p>
             </a>
-          </li> --}}
+            <div class="collapse show" id="componentsExamples">
+              <ul class="nav">
+                <li>
+                  <a href="/pengawas">
+                    <span class="sidebar-mini-icon">B</span>
+                    <span class="sidebar-normal"> Biodata Pengawas </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/petugas">
+                    <span class="sidebar-mini-icon">G</span>
+                    <span class="sidebar-normal"> Biodata Petugas </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -81,8 +98,7 @@
             </div>
             <a class="navbar-brand">OPERA CANDI (Optimalisasi Petugas Kelurahan Cantik Kota Madiun)</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -101,8 +117,7 @@
             <ul class="navbar-nav">
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="nc-icon nc-circle-10"></i>
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ Auth::user()->name }}</span>
                 </a>
@@ -110,17 +125,17 @@
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                   <a class="dropdown-item" href="#">
                     <i class="nc-icon nc-single-02"></i>
-                     Profile
+                    Profile
                   </a>
                   <a class="dropdown-item" href="#">
                     <i class="nc-icon nc-settings-gear-65"></i>
-                     Settings
+                    Settings
                   </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="nc-icon nc-share-66"></i>
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                     Logout
+                    Logout
                   </a>
 
                 </div>
@@ -131,8 +146,7 @@
       </nav>
       <!-- End Navbar -->
       <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
