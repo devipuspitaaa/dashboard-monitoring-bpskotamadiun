@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\SurveiController;
 use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
-Route::resource('form',  FormController::class);
+Route::resource('form',  SurveiController::class);
 Route::get('inputForm', function () {
     return view('form.inputForm');
 });

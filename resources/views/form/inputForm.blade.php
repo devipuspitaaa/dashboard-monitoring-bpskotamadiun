@@ -50,28 +50,18 @@
 
 
                             <div class="form-group">
-                                <label for="ttl_target_revisi">Total Revisi</label>
-                                <input type="ttl_target_revisi" name="ttl_target_revisi" class="form-control" id="ttl_target_revisi" aria-describedby="ttl_target_revisi" required>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="total_petugas">Total Petugas</label>
                                 <input type="total_petugas" name="total_petugas" class="form-control" id="total_petugas" aria-describedby="total_petugas" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="ttl_petugas_revisi">Total Petugas Revisi</label>
-                                <input type="ttl_petugas_revisi" name="ttl_petugas_revisi" class="form-control" id="ttl_petugas_revisi" aria-describedby="ttl_petugas_revisi" required>
+                                <label for="total_pengawas">Total Pengawas</label>
+                                <input type="total_pengawas" name="total_pengawas" class="form-control" id="total_pengawas" aria-describedby="total_pengawas" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="jh_penyelesaian">Jangka Hari Penyelesaian</label>
                                 <input type="jh_penyelesaian" name="jh_penyelesaian" class="form-control" id="jh_penyelesaian" aria-describedby="jh_penyelesaian" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="jhp_revisi">Jangka Hari Penyelesaian Revisi</label>
-                                <input type="jhp_revisi" name="jhp_revisi" class="form-control" id="jhp_revisi" aria-describedby="jhp_revisi" required>
                             </div>
 
                             <div class="form-group">

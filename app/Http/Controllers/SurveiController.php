@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Form;
+use App\Models\Survei;
 use Illuminate\Http\Request;
 use Symfony\Component\VarDumper\Cloner\Data;
 
-class FormController extends Controller
+class SurveiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class FormController extends Controller
     public function index(Request $request)
     {
         if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $form = Form::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
+            $form = Survei::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $form = Form::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $form = Survei::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
         }
         return view('form.index', compact('form'));
     }
@@ -42,16 +42,14 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        Form::create([
+        Survei::create([
             'id' => $request->id,
             'nama_kelurahan' => $request->nama_kelurahan,
             'nama_survei' => $request->nama_survei,
             'total_target' => $request->total_target,
-            'ttl_target_revisi' => $request->ttl_target_revisi,
             'total_petugas' => $request->total_petugas,
-            'ttl_petugas_revisi' => $request->ttl_petugas_revisi,
+            'total_pengawas' => $request->total_pengawas,
             'jh_penyelesaian' => $request->jh_penyelesaian,
-            'jhp_revisi' => $request->jhp_revisi,
             'target_petugas' => $request->target_petugas,
         ]);
 
@@ -69,7 +67,7 @@ class FormController extends Controller
      */
     public function show($id)
     {
-        $form = Form::find($id);
+        $form = Survei::find($id);
         return view('form.tampil', compact('form'));
     }
 
@@ -81,7 +79,7 @@ class FormController extends Controller
      */
     public function edit($id)
     {
-        $data = Form::find($id);
+        $data = Survei::find($id);
 
         return view('form.edit', ['data' => $data]);
     }
@@ -95,15 +93,13 @@ class FormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $form = Form::find($id);
+        $form = Survei::find($id);
         $form->nama_kelurahan = $request->nama_kelurahan;
         $form->nama_survei = $request->nama_survei;
         $form->total_target = $request->total_target;
-        $form->ttl_target_revisi = $request->ttl_target_revisi;
         $form->total_petugas = $request->total_petugas;
-        $form->ttl_petugas_revisi = $request->ttl_petugas_revisi;
+        $form->total_pengawas = $request->total_pengawas;
         $form->jh_penyelesaian = $request->jh_penyelesaian;
-        $form->jhp_revisi = $request->jhp_revisi;
         $form->target_petugas = $request->target_petugas;
         $form->save();
 
@@ -119,7 +115,7 @@ class FormController extends Controller
      */
     public function destroy($id)
     {
-        Form::find($id)->delete();
+        Survei::find($id)->delete();
         return redirect()->route('form.index')
             ->with('success', 'Data Berhasil Dihapus');
     }
@@ -127,10 +123,10 @@ class FormController extends Controller
     public function tampil(Request $request)
     {
         if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $form = Form::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
+            $form = Survei::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $form = Form::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $form = Survei::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
         }
         return view('form.tampil', compact('form'));
     }

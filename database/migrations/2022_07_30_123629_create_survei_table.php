@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFormTable extends Migration
+class CreateSurveiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateFormTable extends Migration
      */
     public function up()
     {
-        Schema::create('form', function (Blueprint $table) {
+        Schema::create('survei', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelurahan');
             $table->string('nama_survei');
             $table->integer('total_target');
-            $table->integer('ttl_target_revisi');
             $table->integer('total_petugas');
-            $table->integer('ttl_petugas_revisi');
+            $table->integer('total_pengawas');
             $table->integer('jh_penyelesaian');
-            $table->integer('jhp_revisi');
             $table->integer('target_petugas');
             $table->timestamps();
         });
@@ -35,6 +33,6 @@ class CreateFormTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('form');
+        Schema::dropIfExists('survei');
     }
 }

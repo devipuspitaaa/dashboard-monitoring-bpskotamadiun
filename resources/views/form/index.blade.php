@@ -42,11 +42,9 @@
                         <th>Nama Kelurahan</th>
                         <th>Nama Survei</th>
                         <th>Total Target</th>
-                        <th>Total Target Revisi</th>
                         <th>Total Petugas</th>
-                        <th>Total Petugas Revisi</th>
+                        <th>Total Pengawas</th>
                         <th>Jangka Hari Penyelesaian</th>
-                        <th>Jangka Hari Penyelesaian Revisi</th>
                         <th>Target Petugas</th>
                         <th width="250px">Action</th>
                     </tr>
@@ -56,11 +54,9 @@
             <td>{{ $data->nama_kelurahan }}</td>
             <td>{{ $data->nama_survei }}</td>
             <td>{{ $data->total_target }}</td>
-            <td>{{ $data->ttl_target_revisi }}</td>
             <td>{{ $data->total_petugas }}</td>
-            <td>{{ $data->ttl_petugas_revisi }}</td>
+            <td>{{ $data->total_pengawas }}</td>
             <td>{{ $data->jh_penyelesaian }}</td>
-            <td>{{ $data->jhp_revisi }}</td>
             <td>{{ $data->target_petugas }}</td>
 
                 <td>
