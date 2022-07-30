@@ -44,7 +44,7 @@
             <th>NIP</th>
             <th width="250px">Action</th>
         </tr>
-        @foreach ($pegawais as $data)
+        @foreach ($pengawas as $data)
         <tr>
 
             <td>{{ $data->nama_lengkap }}</td>
@@ -56,9 +56,9 @@
             <td>{{ $data->nip }}</td>
 
             <td>
-                <form action="{{ route('petugas.destroy',$data->id) }}" method="POST">
+                <form action="{{ route('pengawas.destroy',$data->id) }}" method="POST">
 
-                    <a class="btn btn-primary" href="{{ route('petugas.edit',$data->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('pengawas.edit',$data->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
