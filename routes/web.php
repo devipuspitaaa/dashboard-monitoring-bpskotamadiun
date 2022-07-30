@@ -55,3 +55,7 @@ Route::resource('target', TargetController::class);
 Route::get('inputTarget', function () {
     return view('target.create');
 });
+
+Route::get('/date', function () {
+    return view('datepicker');
+});
