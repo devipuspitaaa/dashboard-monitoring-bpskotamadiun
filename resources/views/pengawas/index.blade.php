@@ -7,7 +7,9 @@
     <div class="col-lg-12 margin-tb">
         <div class="pull-left mt-2">
         </div>
-
+        <div class="section-title">
+                        <center><h3>Data Pengawas</h3></center>
+                    </div>
         <!-- Form Search -->
 
         <div class="float-left my-3 mx-5">

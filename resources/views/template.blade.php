@@ -61,20 +61,18 @@
             <a data-toggle="collapse" href="#componentsExamples" aria-expanded="true" class="">
               <i class="nc-icon nc-layout-11"></i>
               <p>
-                Input Data <b class="caret"></b>
+                Data Pegawai <b class="caret"></b>
               </p>
             </a>
             <div class="collapse show" id="componentsExamples">
               <ul class="nav">
                 <li>
                   <a href="/pengawas">
-                    <span class="sidebar-mini-icon">B</span>
                     <span class="sidebar-normal"> Biodata Pengawas </span>
                   </a>
                 </li>
                 <li>
                   <a href="/petugas">
-                    <span class="sidebar-mini-icon">G</span>
                     <span class="sidebar-normal"> Biodata Petugas </span>
                   </a>
                 </li>

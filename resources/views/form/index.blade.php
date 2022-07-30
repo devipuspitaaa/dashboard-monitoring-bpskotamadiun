@@ -10,6 +10,9 @@
                 </div>
 
                 <!-- Form Search -->
+                <<div class="section-title">
+                        <center><h3>Data Survei</h3></center>
+                    </div>
 
                 <div class="float-left my-3 mx-5">
                     <form action="{{route('form.index')}}" class="row g-3" method="GET">

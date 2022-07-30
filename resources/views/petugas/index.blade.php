@@ -9,6 +9,9 @@
         </div>
 
         <!-- Form Search -->
+        <div class="section-title">
+                        <center><h3>Data Petugas</h3></center>
+                    </div>
 
         <div class="float-left my-3 mx-5">
             <div class="input-group custom-search-form">
