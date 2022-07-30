@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\SurveiController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PengawasController;
+use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,12 +41,12 @@ Route::get('inputForm', function () {
     return view('form.inputForm');
 });
 
-Route::resource('petugas', PegawaiController::class);
+Route::resource('petugas', PetugasController::class);
 Route::get('inputPetugas', function () {
     return view('petugas.create');
 });
 
-Route::resource('pengawas', PegawaiController::class);
+Route::resource('pengawas', PengawasController::class);
 Route::get('inputPengawas', function () {
     return view('pengawas.create');
 });

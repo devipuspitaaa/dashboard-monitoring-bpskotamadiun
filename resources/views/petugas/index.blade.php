@@ -44,7 +44,7 @@
             <th>NIP</th>
             <th width="250px">Action</th>
         </tr>
-        @foreach ($pegawais as $data)
+        @foreach ($petugas as $data)
         <tr>
 
             <td>{{ $data->nama_lengkap }}</td>
