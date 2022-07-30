@@ -34,9 +34,9 @@
         <!-- MENU -->
         <ul class="nav">
           <li>
-            <a href="/home">
+            <a href="/target">
               <i class="nc-icon nc-bank"></i>
-              <p>Home</p>
+              <p>Input Target</p>
             </a>
           </li>
           <li class="active ">
