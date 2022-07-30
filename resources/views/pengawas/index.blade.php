@@ -8,25 +8,27 @@
         <div class="pull-left mt-2">
         </div>
         <div class="section-title">
-                        <center><h3>Data Pengawas</h3></center>
-                    </div>
+            <center>
+                <h3>Data Pengawas</h3>
+            </center>
+        </div>
         <!-- Form Search -->
-
-        <div class="float-left my-3 mx-5">
-            <div class="input-group custom-search-form">
-                <input type="text" class="form-control" name="search" placeholder="Cari...">
-                <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari data</button>
-                </span>
-            </div>
-            </form>
-        </div>
-        <!-- End Form Search -->
-
-        <div class="float-right my-3 mx-5">
-            <a class="btn btn-success" href="{{'/inputPengawas'}}"> Tambah Data</a>
-        </div>
+        <form>
+            <div class="float-left my-3 mx-5">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" name="search" placeholder="Cari...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari data</button>
+                    </span>
+                </div>
+        </form>
     </div>
+    <!-- End Form Search -->
+
+    <div class="float-right my-3 mx-5">
+        <a class="btn btn-success" href="{{'/inputPengawas'}}"> Tambah Data</a>
+    </div>
+</div>
 </div>
 <div class="col-xl-12 col-md-2">
     @if ($message = Session::get('success'))
