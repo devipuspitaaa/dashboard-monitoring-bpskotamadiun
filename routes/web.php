@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\SurveiController;
-use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,4 +49,9 @@ Route::get('inputPetugas', function () {
 Route::resource('pengawas', PengawasController::class);
 Route::get('inputPengawas', function () {
     return view('pengawas.create');
+});
+
+Route::resource('target', TargetController::class);
+Route::get('inputTarget', function () {
+    return view('target.create');
 });
