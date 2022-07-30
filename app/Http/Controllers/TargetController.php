@@ -16,7 +16,7 @@ class TargetController extends Controller
     public function index(Request $request)
     {
         if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $targets = Target::where('nama_lengkap', 'like', "%" . $request->search . "%")->paginate(5);
+            $targets = Target::where('nama_petugas', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
             $targets = Target::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data

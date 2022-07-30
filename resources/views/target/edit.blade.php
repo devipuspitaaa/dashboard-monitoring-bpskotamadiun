@@ -17,7 +17,7 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('targets.update', $data->id) }}" id="myForm">
+                <form method="post" action="{{ route('target.update', $data->id) }}" id="myForm">
                     @csrf
                     @method('PUT')<div class="form-group">
                         <label for="nama_petugas">Nama Petugas</label>
