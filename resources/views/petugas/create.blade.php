@@ -4,14 +4,12 @@
 <br></br>
 
 {{-- Input Data section begin --}}
-<section class="featured spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Tambah Data</h2>
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header ">
+                    <h4 class="card-title">Tambah Data Petugas</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body ">
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -22,60 +20,82 @@
                         </ul>
                     </div>
                     @endif
-                </div>
-                <form method="post" action="{{ route('petugas.store') }}" id="myForm" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('petugas.store') }}" class="form-horizontal">
                     @csrf
                     <div class="featured__controls">
-
-                        <div class="form-group">
-                            <label for="nama_lengkap">Nama Lengkap</label>
-                            <input type="nama_lengkap" name="nama_lengkap" class="form-control" id="nama_lengkap"
-                                aria-describedby="nama_lengkap" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Nama Lengkap</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <input type="nama_lengkap" name="nama_lengkap" class="form-control" id="nama_lengkap" aria-describedby="nama_lengkap" placeholder="masukkan nama lengkap" required>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="no_ktp">No KTP</label>
-                            <input type="no_ktp" name="no_ktp" class="form-control" id="no_ktp"
-                                aria-describedby="no_ktp" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">No. KTP</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <input type="no_ktp" name="no_ktp" class="form-control" id="no_ktp" aria-describedby="no_ktp" placeholder="masukkan no. ktp" required>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <input type="jenis_kelamin" name="jenis_kelamin" class="form-control" id="jenis_kelamin"
-                                aria-describedby="jenis_kelamin" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                            <div class="col-sm-10 checkbox-radios">
+                                <div class="form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-Laki" required>
+                                        Laki - Laki
+                                        <span class="form-check-sign"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" required>
+                                        Perempuan
+                                        <span class="form-check-sign"></span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-
-
-                        <div class="form-group">
-                            <label for="tempat_tanggal_lahir">Tempat Tanggal Lahir</label>
-                            <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control"
-                                id="tempat_tanggal_lahir" aria-describedby="tempat_tanggal_lahir" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control" id="tempat_tanggal_lahir" aria-describedby="tempat_tanggal_lahir" required>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="no_tlp">No Telepon</label>
-                            <input type="no_tlp" name="no_tlp" class="form-control" id="no_tlp"
-                                aria-describedby="no_tlp" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">No. Telepon</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <input type="no_tlp" name="no_tlp" class="form-control" id="no_tlp" aria-describedby="no_tlp" placeholder="masukkan no. telepon" required>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="alamat" name="alamat" class="form-control"
-                                id="alamat" aria-describedby="alamat" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Alamat</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <input type="alamat" name="alamat" class="form-control" id="alamat" aria-describedby="alamat" placeholder="masukkan alamat" required>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="nip">NIP</label>
-                            <input type="nip" name="nip" class="form-control"
-                                id="nip" aria-describedby="nip" required>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">NIP</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <input type="nip" name="nip" class="form-control" id="nip" aria-describedby="nip" placeholder="masukkan nip" required>
+                                </div>
+                            </div>
                         </div>
-
-                        <br><br>
-                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-
 
         {{-- Input Data section end --}}
         @endsection

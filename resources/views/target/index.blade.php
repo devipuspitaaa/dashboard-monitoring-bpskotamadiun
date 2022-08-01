@@ -26,18 +26,24 @@
     </div>
     <!-- End Form Search -->
     <form>
-        <div class="form-group">
-            <div class='input-group date' id='CalendarDateTime'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='CalendarDateTime'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <script type="text/javascript">
-            $(function() {
-                   $('#CalendarDateTime').datetimepicker();
+            <script type="text/javascript">
+                $(function() {
+                    $('#CalendarDateTime').datetimepicker();
                 });
-        </script>
+            </script>
+        </div>
+    </form>
 
     </form>
     <div class="float-right my-3 mx-5">

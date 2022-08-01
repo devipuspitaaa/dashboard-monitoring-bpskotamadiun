@@ -6,7 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <center><h3 class="form-title">W E L C O M E</h3></center>
+                    <center>
+                        <h3 class="form-title">W E L C O M E</h3>
+                    </center>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -18,9 +20,7 @@
                                 }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="username"
-                                    class="form-control @error('username') is-invalid @enderror" name="username"
-                                    value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                                 @error('username')
                                 <span class="invalid-feedback" role="alert">
@@ -35,9 +35,7 @@
                                 }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -71,6 +69,13 @@
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                                 @endif
+                            </div>
+                            <br /><br />
+                            <div class="col-md-8 offset-md-4">
+                                Don't have any account? 
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                {{ __('Register') }}
+                                </a>
                             </div>
                         </div>
                     </form>

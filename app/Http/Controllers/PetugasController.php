@@ -54,7 +54,7 @@ class PetugasController extends Controller
         ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         // return 'Data Berhasil Ditambahkan';
-        return redirect()->route('pengawas.index')
+        return redirect()->route('petugas.index')
             ->with('success', 'Data Berhasil Ditambahkan');
     }
 
