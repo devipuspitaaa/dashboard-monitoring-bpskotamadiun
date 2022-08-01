@@ -32,29 +32,19 @@ Route::get('/tentang', function () {
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('/tentang', [\App\Http\Controllers\TentangController::class, 'index'])->name('tentang');
-
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('form',  SurveiController::class);
-Route::get('inputForm', function () {
-    return view('form.inputForm');
-});
+Route::get('inputForm', [App\Http\Controllers\SurveiController::class, 'create'])->name('inputForm');
 
 Route::resource('petugas', PetugasController::class);
-Route::get('inputPetugas', function () {
-    return view('petugas.create');
-});
+Route::get('inputPetugas', [App\Http\Controllers\PetugasController::class, 'create'])->name('inputPetugas');
 
 Route::resource('pengawas', PengawasController::class);
-Route::get('inputPengawas', function () {
-    return view('pengawas.create');
-});
+Route::get('inputPengawas', [App\Http\Controllers\PengawasController::class, 'create'])->name('inputPengawas');
 
 Route::resource('target', TargetController::class);
-Route::get('inputTarget', function () {
-    return view('target.create');
-});
+Route::get('inputTarget', [App\Http\Controllers\TargetController::class, 'create'])->name('inputTarget');
 
 Route::get('/date', function () {
     return view('datepicker');

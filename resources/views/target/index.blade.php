@@ -25,21 +25,6 @@
         </form>
     </div>
     <!-- End Form Search -->
-    <form>
-        <div class="form-group">
-            <div class='input-group date' id='CalendarDateTime'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            $(function() {
-                   $('#CalendarDateTime').datetimepicker();
-                });
-        </script>
-
-    </form>
     <div class="float-right my-3 mx-5">
         <a class="btn btn-success" href="{{'/inputTarget'}}"> Tambah Data</a>
     </div>
@@ -54,12 +39,14 @@
 
     <table class="table table-bordered">
         <tr>
+            <th>Tanggal</th>
             <th>Nama Petugas</th>
             <th>Jumlah Target</th>
             <th width="250px">Action</th>
         </tr>
         @foreach ($targets as $data)
         <tr>
+            <td>{{ $data->tanggal }}</td>
             <td>{{ $data->nama_petugas }}</td>
             <td>{{ $data->target }}</td>
             <td>

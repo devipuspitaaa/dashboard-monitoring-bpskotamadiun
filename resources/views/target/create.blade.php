@@ -26,6 +26,11 @@
                 <form method="post" action="{{ route('target.store') }}" id="myForm" enctype="multipart/form-data">
                     @csrf
                     <div class="featured__controls">
+                        {{-- <div class="form-group">
+                            <label for="tanggal">Tanggal</label>
+                            <input type="tanggal" name="tanggal" class="form-control" id="tanggal"
+                                aria-describedby="tanggal" required>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="nama_petugas">Nama Petugas</label>

@@ -19,7 +19,13 @@
                 @endif
                 <form method="post" action="{{ route('target.update', $data->id) }}" id="myForm">
                     @csrf
-                    @method('PUT')<div class="form-group">
+                    @method('PUT')
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal</label>
+                        <input type="text" name="tanggal" class="formcontrol" id="tanggal"
+                            value="{{ $data->tanggal }}" ariadescribedby="tanggal">
+                    </div>
+                    <div class="form-group">
                         <label for="nama_petugas">Nama Petugas</label>
                         <input type="text" name="nama_petugas" class="formcontrol" id="nama_petugas"
                             value="{{ $data->nama_petugas }}" ariadescribedby="nama_petugas">
@@ -28,7 +34,8 @@
                         <label for="target">Jumlah Target</label>
                         <input type="text" name="target" class="formcontrol" id="target" value="{{ $data->target }}"
                             ariadescribedby="target">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
