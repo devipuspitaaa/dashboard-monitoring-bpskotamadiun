@@ -40,7 +40,7 @@ class TargetController extends Controller
             }]
         ])
             ->orderBy('id', 'asc')
-            ->simplePaginate(3);
+            ->simplePaginate(10);
 
         return view('target.index', compact('targets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -90,11 +90,10 @@ class TargetController extends Controller
         $targets->tanggal = Carbon::now();
         $targets->nama_petugas = $request->get('nama_petugas');
         $targets->target = $request->get('target');
-        $targets->petugas_id = $request->get('petugas_id');
         $targets->save();
 
         $petugas = new Petugas;
-        $petugas->id = $request->get('Petugas');
+        $petugas->nama_petugas = $request->get('Petugas');
 
         //fungsi eloquent untuk menambah data dengan relasi belongsTO
         $targets->petugas()->associate($petugas);
@@ -176,7 +175,7 @@ class TargetController extends Controller
             $targets = Target::where('nama_petugas', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $targets = Target::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $targets = Target::orderBy('nama_petugas', 'desc')->paginate(5); // Pagination menampilkan 5 data
         }
         return view('target.tampil', compact('target'));
     }
