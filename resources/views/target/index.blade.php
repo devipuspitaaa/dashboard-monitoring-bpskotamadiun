@@ -25,6 +25,30 @@
         </form>
     </div>
     <!-- End Form Search -->
+<<<<<<< HEAD
+    <form>
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='CalendarDateTime'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function() {
+                    $('#CalendarDateTime').datetimepicker();
+                });
+            </script>
+        </div>
+    </form>
+
+    </form>
+=======
+>>>>>>> 70640f0ee1a89e5944113911dbe35698854a955e
     <div class="float-right my-3 mx-5">
         <a class="btn btn-success" href="{{'/inputTarget'}}"> Tambah Data</a>
     </div>
