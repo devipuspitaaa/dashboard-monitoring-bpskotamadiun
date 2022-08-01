@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Petugas;
 use Illuminate\Http\Request;
 use App\Models\Target;
-
+use Carbon\Carbon;
+use Auth;
+use League\CommonMark\CommonMarkConverter;
 
 class TargetController extends Controller
 {
@@ -17,7 +20,7 @@ class TargetController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -26,13 +29,30 @@ class TargetController extends Controller
 
     public function index(Request $request)
     {
-        if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $targets = Target::where('nama_petugas', 'like', "%" . $request->search . "%")->paginate(5);
-        } else { // Jika tidak melakukan pencarian judul
-            //fungsi eloquent menampilkan data menggunakan pagination
-            $targets = Target::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
-        }
-        return view('target.index', compact('targets'));
+        $targets = Target::with('petugas')->get();
+
+        $targets = Target::where([
+            ['petugas_id', '!=', Null],
+            [function ($query) use ($request) {
+                if (($term = $request->term)) {
+                    $query->orWhere('petugas_id', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+            ->orderBy('id', 'asc')
+            ->simplePaginate(3);
+
+        return view('target.index', compact('targets'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+        // $paginate = Target::orderBy('id', 'asc')->paginate(5); // Pagination menampilkan 5 data
+
+        // if ($request->has('search')) { // Jika ingin melakukan pencarian judul
+        //     $targets = Target::where('petugas_id', 'like', "%" . $request->search . "%")->paginate(5);
+        // } else { // Jika tidak melakukan pencarian judul
+        //     //fungsi eloquent menampilkan data menggunakan pagination
+        //     $targets = Target::orderBy('id', 'asc')->paginate(5); // Pagination menampilkan 5 data
+        // }
+        // return view('target.index', ['target' => $targets,'paginate' => $paginate]);
     }
 
     /**
@@ -42,7 +62,8 @@ class TargetController extends Controller
      */
     public function create()
     {
-        return view('target.create');
+        $petugas = Petugas::all(); //mendapatkan data dari tabel kelas
+        return view('target.create', ['petugas' => $petugas]);
     }
 
     /**
@@ -53,12 +74,33 @@ class TargetController extends Controller
      */
     public function store(Request $request)
     {
-        Target::create([
+        $request->validate([
             'id' => $request->id,
-            'tanggal' => $request->tanggal,
+            'tanggal' => Carbon::now(),
             'nama_petugas' => $request->nama_petugas,
             'target' => $request->target,
         ]);
+        $targets = new Target;
+        $targets->id = $request->get('id');
+        $targets->tanggal = $request->get('tanggal');
+        $targets->nama_petugas = $request->get('nama_petugas');
+        $targets->target = $request->get('target');
+        $targets->save();
+
+        $petugas = new Petugas;
+        $petugas->id = $request->get('Petugas');
+
+        //fungsi eloquent untuk menambah data dengan relasi belongsTO
+        $targets->petugas()->associate($petugas);
+        $targets->save();
+
+
+        // Target::create([
+        //     'id' => $request->id,
+        //     'tanggal' => Carbon::now(),
+        //     'nama_petugas' => $request->nama_petugas,
+        //     'target' => $request->target,
+        // ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         // return 'Data Berhasil Ditambahkan';
         return redirect()->route('target.index')

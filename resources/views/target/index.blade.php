@@ -47,7 +47,7 @@
         @foreach ($targets as $data)
         <tr>
             <td>{{ $data->tanggal }}</td>
-            <td>{{ $data->nama_petugas }}</td>
+            <td>{{ $data->petugas->nama_lengkap }}</td>
             <td>{{ $data->target }}</td>
             <td>
                 <form action="{{ route('target.destroy',$data->id) }}" method="POST">

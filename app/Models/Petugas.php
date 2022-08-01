@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Target;
 
 class Petugas extends Model
 {
     use HasFactory;
-    protected $table = "Petugas";
-    public $timestamps = false;
+    protected $table = 'Petugas';
+    // public $timestamps = false;
     protected $primaryKey = 'id';
 
     protected $fillable = [
@@ -22,4 +23,8 @@ class Petugas extends Model
         'alamat',
         'nip',
     ];
+
+    public function target(){
+        return $this->hasMany(Target::class);
+    }
 }

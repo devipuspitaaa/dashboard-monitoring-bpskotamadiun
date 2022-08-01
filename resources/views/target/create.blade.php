@@ -34,8 +34,12 @@
 
                         <div class="form-group">
                             <label for="nama_petugas">Nama Petugas</label>
-                            <input type="nama_petugas" name="nama_petugas" class="form-control" id="nama_petugas"
-                                aria-describedby="nama_petugas" required>
+                            <select name="nama_petugas" id="nama_petugas" class="form-control">
+                                <option selected disabled>Pilih Petugas</option>
+                                @foreach($petugas as $petugas)
+                                <option value="{{$petugas->id}}">{{$petugas->nama_lengkap}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
