@@ -4,17 +4,16 @@
 <br></br>
 <br></br>
 <br></br>
-<div class="row g-2">
-            <div class="col-lg-12 margin-tb">
-                <div class="pull-left mt-2">
-                </div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title"> Data Survei </h4>
+            <a class="btn btn-success" href="{{'/inputForm'}}"> Tambah Data</a>
+        </div>
 
-                <!-- Form Search -->
-                <<div class="section-title">
-                        <center><h3>Data Survei</h3></center>
-                    </div>
-
-                <div class="float-left my-3 mx-5">
+        <div class="col-md-12">
+        <div class="card">
+        <div class="card-header">
                     <form action="{{route('form.index')}}" class="row g-3" method="GET">
                         <div class="input-group custom-search-form">
                             <input type="text" class="form-control" name="search" placeholder="Cari...">
@@ -24,32 +23,48 @@
                         </div>
                     </form>
                 </div>
+</div>
+</div>
                 <!-- End Form Search -->
 
-                <div class="float-right my-3 mx-5">
-                    <a class="btn btn-success" href="{{'/inputForm'}}"> Tambah Data</a>
-                </div>
-                
-            </div>
-        </div>
-        <div class="col-xl-12 col-md-2">
+        <div class="card-body">
             @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
-        @endif
+            @endif
 
-        <table class="table table-bordered">
-                     <tr>
-                        <th>Nama Kelurahan</th>
-                        <th>Nama Survei</th>
-                        <th>Total Target</th>
-                        <th>Total Petugas</th>
-                        <th>Total Pengawas</th>
-                        <th>Jangka Hari Penyelesaian</th>
-                        <th>Target Petugas</th>
-                        <th width="250px">Action</th>
-                    </tr>
+        <div class="table-responsive">
+                <table class="table">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>
+                                Nama Kelurahan
+                            </th>
+                            <th>
+                                Nama Survei
+                            </th>
+                            <th>
+                                Total Target
+                            </th>
+                            <th>
+                                Total Petugas
+                            </th>
+                            <th>
+                                Total Pengawas
+                            </th>
+                            <th>
+                                Jangka Hari Penyelesaian
+                            </th>
+                            <th>
+                                Target Petugas
+                            </th>
+                            <th class="text-right">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
             @foreach ($form as $data)
             <tr>
 
@@ -63,16 +78,24 @@
 
                 <td>
                 <form action="{{ route('form.destroy',$data->id) }}" method="POST">
-                    
-                    <a class="btn btn-primary" href="{{ route('form.edit',$data->id) }}">Edit</a>
+                                    <a href="{{ route('form.edit',$data->id) }}">
+                                        <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Hapus</button>
-                </form></td>
+                    <button type="submit" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                </form>
+          
                 </td>
             </tr>
             @endforeach
+            </tbody>
             </table>
         </div>
+</div>
 @endsection
 
