@@ -32,10 +32,10 @@ class TargetController extends Controller
         $targets = Target::with('petugas')->get();
 
         $targets = Target::where([
-            ['petugas_id', '!=', Null],
+            ['nama_petugas', '!=', Null],
             [function ($query) use ($request) {
                 if (($term = $request->term)) {
-                    $query->orWhere('petugas_id', 'LIKE', '%' . $term . '%')->get();
+                    $query->orWhere('nama_petugas', 'LIKE', '%' . $term . '%')->get();
                 }
             }]
         ])
@@ -62,7 +62,7 @@ class TargetController extends Controller
      */
     public function create()
     {
-        $petugas = Petugas::all(); //mendapatkan data dari tabel kelas
+        $petugas = Petugas::all(); //mendapatkan data dari tabel petugas
         return view('target.create', ['petugas' => $petugas]);
     }
 
@@ -74,17 +74,23 @@ class TargetController extends Controller
      */
     public function store(Request $request)
     {
+        // $targets = Target::Where('id', $id)->first();
+        // $petugas = Petugas::Where('id', $id)->first();
+
         $request->validate([
-            'id' => $request->id,
+            // 'id' => 'required',
             'tanggal' => Carbon::now(),
-            'nama_petugas' => $request->nama_petugas,
-            'target' => $request->target,
+            'nama_petugas' => 'required',
+            'target' => 'required',
+            // 'petugas_id' => 'required',
         ]);
+
         $targets = new Target;
-        $targets->id = $request->get('id');
-        $targets->tanggal = $request->get('tanggal');
+        // $targets->id = $request->get('id');
+        $targets->tanggal = Carbon::now();
         $targets->nama_petugas = $request->get('nama_petugas');
         $targets->target = $request->get('target');
+        $targets->petugas_id = $request->get('petugas_id');
         $targets->save();
 
         $petugas = new Petugas;

@@ -16,10 +16,12 @@ class Target extends Model
     protected $fillable = [
         'id',
         'tanggal',
-        'petugas_id',
+        'nama_petugas',
         'target',
+        'petugas_id',
     ];
-    public function petugas() {
+    public function petugas()
+    {
         return $this->belongsTo(Petugas::class);
     }
 }

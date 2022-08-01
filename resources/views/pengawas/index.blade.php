@@ -6,7 +6,18 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title"> Data Pengawas </h4>
+            <center>
+                <h2 class="card-title"> Data Pengawas </h2>
+            </center>
+            <form>
+                <div class="float-left my-2 mx-3">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" name="search" placeholder="Cari...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+            </form>
             <a class="btn btn-success" href="{{'/inputPengawas'}}"> Tambah Data</a>
         </div>
         <div class="card-body">
@@ -79,15 +90,7 @@
             </div>
         </div>
         <!-- Form Search -->
-        <form>
-            <div class="float-left my-3 mx-5">
-                <div class="input-group custom-search-form">
-                    <input type="text" class="form-control" name="search" placeholder="Cari...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari data</button>
-                    </span>
-                </div>
-        </form>
+
     </div>
     <!-- End Form Search -->
 </div>

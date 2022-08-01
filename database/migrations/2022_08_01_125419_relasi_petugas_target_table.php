@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TambahKolomDiTabelTarget extends Migration
+class RelasiPetugasTargetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class TambahKolomDiTabelTarget extends Migration
     public function up()
     {
         Schema::table('targets', function (Blueprint $table) {
-            $table->date('tanggal')->after('id')->nullable();
+            $table->unsignedBigInteger('petugas_id')->nullable(); //menambahkan kolom petugas_id
+            $table->foreign('petugas_id')->references('id')->on('petugas'); //menambahkan foreign key di kolom petugas_id
         });
     }
 
@@ -25,8 +26,8 @@ class TambahKolomDiTabelTarget extends Migration
      */
     public function down()
     {
-        Schema::table('targets', function (Blueprint $table){
-            $table->dropColumn('tanggal');
+        Schema::table('targets', function (Blueprint $table) {
+            $table->dropForeign(['petugas_id']);
         });
     }
 }

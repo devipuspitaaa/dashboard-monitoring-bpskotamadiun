@@ -11,44 +11,20 @@
         <!-- Form Search -->
         <div class="section-title">
             <center>
-                <h3>Data Target Petugas</h3>
+                <h2>Data Target Petugas</h2>
             </center>
         </div>
         <form>
-            <div class="float-left my-3 mx-5">
+            <div class="float-left my-2 mx-3">
                 <div class="input-group custom-search-form">
                     <input type="text" class="form-control" name="search" placeholder="Cari...">
                     <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari data</button>
+                        <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
                     </span>
                 </div>
         </form>
     </div>
     <!-- End Form Search -->
-<<<<<<< HEAD
-    <form>
-        <div class="row">
-            <div class='col-sm-6'>
-                <div class="form-group">
-                    <div class='input-group date' id='CalendarDateTime'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(function() {
-                    $('#CalendarDateTime').datetimepicker();
-                });
-            </script>
-        </div>
-    </form>
-
-    </form>
-=======
->>>>>>> 70640f0ee1a89e5944113911dbe35698854a955e
     <div class="float-right my-3 mx-5">
         <a class="btn btn-success" href="{{'/inputTarget'}}"> Tambah Data</a>
     </div>
@@ -71,17 +47,30 @@
         @foreach ($targets as $data)
         <tr>
             <td>{{ $data->tanggal }}</td>
-            <td>{{ $data->petugas->nama_lengkap }}</td>
+            <td>{{ $data->nama_petugas}}</td>
             <td>{{ $data->target }}</td>
             <td>
                 <form action="{{ route('target.destroy',$data->id) }}" method="POST">
+                    <a href="{{ route('target.edit',$data->id) }}">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </form>
+
+                {{-- <form action="{{ route('target.destroy',$data->id) }}" method="POST">
 
                     <a class="btn btn-primary" href="{{ route('target.edit',$data->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
                 </form>
-            </td>
+                --}}
             </td>
         </tr>
         @endforeach
