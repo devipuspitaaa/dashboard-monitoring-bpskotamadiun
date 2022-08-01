@@ -25,6 +25,7 @@
         </form>
     </div>
     <!-- End Form Search -->
+<<<<<<< HEAD
     <form>
         <div class="row">
             <div class='col-sm-6'>
@@ -46,6 +47,8 @@
     </form>
 
     </form>
+=======
+>>>>>>> 70640f0ee1a89e5944113911dbe35698854a955e
     <div class="float-right my-3 mx-5">
         <a class="btn btn-success" href="{{'/inputTarget'}}"> Tambah Data</a>
     </div>
@@ -60,12 +63,14 @@
 
     <table class="table table-bordered">
         <tr>
+            <th>Tanggal</th>
             <th>Nama Petugas</th>
             <th>Jumlah Target</th>
             <th width="250px">Action</th>
         </tr>
         @foreach ($targets as $data)
         <tr>
+            <td>{{ $data->tanggal }}</td>
             <td>{{ $data->nama_petugas }}</td>
             <td>{{ $data->target }}</td>
             <td>

@@ -9,10 +9,21 @@ use App\Models\Target;
 class TargetController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
     {
         if ($request->has('search')) { // Jika ingin melakukan pencarian judul
@@ -44,6 +55,7 @@ class TargetController extends Controller
     {
         Target::create([
             'id' => $request->id,
+            'tanggal' => $request->tanggal,
             'nama_petugas' => $request->nama_petugas,
             'target' => $request->target,
         ]);
@@ -88,8 +100,9 @@ class TargetController extends Controller
     public function update(Request $request, $id)
     {
         $targets = Target::find($id);
-        $targets-> nama_petugas = $request->nama_petugas;
-        $targets-> target = $request->target;
+        $targets->tanggal = $request->tanggal;
+        $targets->nama_petugas = $request->nama_petugas;
+        $targets->target = $request->target;
         $targets->save();
 
         return redirect()->route('target.index')
