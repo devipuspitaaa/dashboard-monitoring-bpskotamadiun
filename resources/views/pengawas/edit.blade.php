@@ -1,6 +1,4 @@
-@extends('template')
-
-@section('content')
+<center>
 
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
@@ -78,4 +76,3 @@
         </div>
     </div>
 </div>
-@endsection
