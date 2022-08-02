@@ -8,7 +8,7 @@
     <div class="card">
         <div class="card-header">
             <center>
-                <h2 class="card-title"> Data Survei </h2>
+                <h2 class="card-title"><strong> DATA SURVEI</strong> </h2>
             </center>
             <form>
                 <div class="float-left my-2 mx-3">
@@ -19,7 +19,7 @@
                         </span>
                     </div>
             </form>
-            <a class="btn btn-success my-2" href="{{'/inputForm'}}"> Tambah Data</a>
+            <a class="btn btn-success my-2" href="{{ route('form.create') }}"> Tambah Data</a>
 
         </div>
         <div class="card-body">

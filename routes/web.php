@@ -46,10 +46,6 @@ Route::get('inputPengawas', [App\Http\Controllers\PengawasController::class, 'cr
 Route::resource('target', TargetController::class);
 Route::get('inputTarget', [App\Http\Controllers\TargetController::class, 'create'])->name('inputTarget');
 
-// Route::get('/date', function () {
-//     return view('datepicker');
-// });
-
 Route::get('inputForm', function () { return view('inputForm'); })->middleware('checkRole:admin');
 Route::get('inputPetugas', function () { return view('inputPetugas'); })->middleware('checkRole:admin');
 Route::get('inputPengawas', function () { return view('inputPengawas'); })->middleware('checkRole:admin');

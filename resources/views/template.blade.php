@@ -34,12 +34,7 @@
       <div class="sidebar-wrapper">
         <!-- MENU -->
         <ul class="nav">
-          <li>
-            <a href="/target">
-              <i class="nc-icon nc-bank"></i>
-              <p>Input Target</p>
-            </a>
-          </li>
+
           <li>
             <a href="/home">
               <i class="nc-icon nc-chart-bar-32"></i>
@@ -56,6 +51,12 @@
             <a href="/form">
               <i class="nc-icon nc-paper"></i>
               <p>Input Survei</p>
+            </a>
+          </li>
+          <li>
+            <a href="/target">
+              <i class="nc-icon nc-align-center"></i>
+              <p>Input Target</p>
             </a>
           </li>
           <li>
@@ -128,10 +129,10 @@
                     <i class="nc-icon nc-single-02"></i>
                     Profile
                   </a>
-                  <a class="dropdown-item" href="#">
+                  {{-- <a class="dropdown-item" href="#">
                     <i class="nc-icon nc-settings-gear-65"></i>
                     Settings
-                  </a>
+                  </a> --}}
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="nc-icon nc-share-66"></i>

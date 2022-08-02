@@ -7,8 +7,9 @@
     <div class="card">
         <div class="card-header">
             <center>
-                <h2 class="card-title"> Data Petugas </h2>
+                <h2 class="card-title"><strong> DATA PETUGAS</strong> </h2>
             </center>
+            <br>
             <form>
                 <div class="float-left my-2 mx-3">
                     <div class="input-group custom-search-form">
@@ -18,7 +19,7 @@
                         </span>
                     </div>
             </form>
-            <a class="btn btn-success my-2" href="{{'/inputPetugas'}}"> Tambah Data</a>
+            <a class="btn btn-success my-2" href="{{ route('petugas.create') }}"> Tambah Data</a>
 
         </div>
         <div class="card-body">
