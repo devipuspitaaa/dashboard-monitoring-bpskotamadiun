@@ -18,8 +18,7 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div id="page-top">
+<body id="page-top">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
@@ -48,7 +47,7 @@
                                 <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ url('/tentang')}}">Tentang</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ url('login')}}">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a>
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a> --}}
                                 </li>
                             </ul>
                         </div>
@@ -92,8 +91,7 @@
         </main>
     </div>
 </body>
-<br><br><br><br>
-<br><br><br>
+
 @include('layouts.footer')
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

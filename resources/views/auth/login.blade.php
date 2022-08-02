@@ -7,9 +7,22 @@
             <div class="card">
                 <div class="card-header">
                     <center>
-                        <h3 class="form-title">W E L C O M E</h3>
+                        <h5 class="form-title">What type of user are you ?</h5>
                     </center>
                 </div>
+                <br>
+                <div class="container">
+                    <div class="sign-up-content">
+                        <center><div class="form-group">
+                            {{-- <label>Login Sebagai</label><br><br> --}}
+                            <input type="button" class="btn btn-info" id="btn_admin" onclick="changeLogin('login')" value="Admin">&nbsp;&nbsp;&nbsp;
+                            <input type="button" class="btn btn-warning" id="btn_pengawas" onclick="changeLogin('login')" value="Pengawas">&nbsp;&nbsp;&nbsp;
+	                	    <input type="button" class="btn btn-info" id="btn_lurah" onclick="changeLogin('login')" value="Lurah">
+                        </div>
+
+                    </div></center>
+                </div>
+                <br>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
 
@@ -57,6 +70,7 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
@@ -74,7 +88,7 @@
                             <div class="col-md-8 offset-md-4">
                                 Don't have any account? 
                                 <a class="btn btn-link" href="{{ route('register') }}">
-                                {{ __('Register') }}
+                                {{ __('Register Pengawas') }}
                                 </a>
                             </div>
                         </div>
