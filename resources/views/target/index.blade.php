@@ -3,10 +3,10 @@
 <br></br>
 <br></br>
 <br></br>
-<div class="row g-2">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left mt-2">
-        </div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+     
 
         <!-- Form Search -->
         <div class="section-title">
@@ -29,7 +29,8 @@
         <a class="btn btn-success" href="{{'/inputTarget'}}"> Tambah Data</a>
     </div>
 </div>
-</div>
+
+
 <div class="col-xl-12 col-md-2">
     @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -75,5 +76,6 @@
         </tr>
         @endforeach
     </table>
+</div>
 </div>
 @endsection

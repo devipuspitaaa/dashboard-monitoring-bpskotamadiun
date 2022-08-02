@@ -7,26 +7,21 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title"> Data Survei </h4>
-            <a class="btn btn-success" href="{{'/inputForm'}}"> Tambah Data</a>
+            <center>
+                <h2 class="card-title"> Data Survei </h2>
+            </center>
+            <form>
+                <div class="float-left my-2 mx-3">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" name="search" placeholder="Cari...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+            </form>
+            <a class="btn btn-success my-2" href="{{'/inputForm'}}"> Tambah Data</a>
+
         </div>
-
-        <div class="col-md-12">
-        <div class="card">
-        <div class="card-header">
-                    <form action="{{route('form.index')}}" class="row g-3" method="GET">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" name="search" placeholder="Cari...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i> Cari data</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-</div>
-</div>
-                <!-- End Form Search -->
-
         <div class="card-body">
             @if ($message = Session::get('success'))
             <div class="alert alert-success">
