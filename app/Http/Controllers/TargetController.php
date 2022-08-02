@@ -40,7 +40,7 @@ class TargetController extends Controller
             }]
         ])
             ->orderBy('id', 'asc')
-            ->simplePaginate(10);
+            ->simplePaginate(1000);
 
         return view('target.index', compact('targets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

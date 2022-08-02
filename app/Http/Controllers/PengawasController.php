@@ -28,7 +28,7 @@ class PengawasController extends Controller
             $pengawas = Pengawas::where('nama_lengkap', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $pengawas = Pengawas::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $pengawas = Pengawas::orderBy('id', 'desc')->paginate(1000); // Pagination menampilkan 5 data
         }
         return view('pengawas.index', compact('pengawas'));
     }

@@ -23,7 +23,7 @@ class PetugasController extends Controller
             $petugas = Petugas::where('nama_lengkap', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $petugas = Petugas::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $petugas = Petugas::orderBy('id', 'desc')->paginate(1000); // Pagination menampilkan 5 data
         }
         return view('petugas.index', compact('petugas'));
     }

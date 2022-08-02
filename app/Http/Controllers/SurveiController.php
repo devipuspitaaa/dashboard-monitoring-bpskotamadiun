@@ -23,7 +23,7 @@ class SurveiController extends Controller
             $form = Survei::where('nama_kelurahan', 'like', "%" . $request->search . "%")->paginate(5);
         } else { // Jika tidak melakukan pencarian judul
             //fungsi eloquent menampilkan data menggunakan pagination
-            $form = Survei::orderBy('id', 'desc')->paginate(5); // Pagination menampilkan 5 data
+            $form = Survei::orderBy('id', 'desc')->paginate(1000); // Pagination menampilkan 5 data
         }
         return view('form.index', compact('form'));
     }
