@@ -172,8 +172,8 @@
                                         <thead>
                                             <tr role="row">
                                                 <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 53px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nama</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 73px;" aria-label="Position: activate to sort column ascending">01/08/22</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 55px;" aria-label="Office: activate to sort column ascending">02/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">01/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">02/08/22</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">03/08/22</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">04/08/22</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">05/08/22</th>
@@ -182,21 +182,41 @@
                                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">08/08/22</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">09/08/22</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">10/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">11/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">12/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">13/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">14/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">15/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">16/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">17/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">18/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">19/08/22</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 31px;" aria-label="Age: activate to sort column ascending">20/08/22</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr role="row" class="odd">
                                                 <td tabindex="0" class="sorting_1" class="card-header" role="tab" id="heading1">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">
-                                                        Nama Pengawas
-                                                        <i class="nc-icon nc-minimal-down"></i>
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseTwo">
+                                                        <i class="nc-icon nc-simple-add"></i>
                                                     </a>
-                                                    <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1">
+                                                    Nama Pengawas
+                                                    <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading1">
                                                         <div class="card-body">
                                                             Nama Petugas
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
                                                 <td>3</td>
                                                 <td>3</td>
                                                 <td>3</td>
@@ -213,16 +233,26 @@
                                         <tbody>
                                             <tr role="row" class="odd">
                                                 <td tabindex="0" class="sorting_1" class="card-header" role="tab" id="heading1">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">
-                                                        Nama Pengawas
-                                                        <i class="nc-icon nc-minimal-down"></i>
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseTwo">
+                                                        <i class="nc-icon nc-simple-add"></i>
                                                     </a>
-                                                    <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1">
+                                                    Nama Pengawas
+                                                    <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading1">
                                                         <div class="card-body">
                                                             Nama Petugas
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>3</td>
                                                 <td>3</td>
                                                 <td>3</td>
                                                 <td>3</td>
