@@ -200,10 +200,10 @@
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseTwo">
                                                         <i class="nc-icon nc-simple-add"></i>
                                                     </a>
-                                                    Nama Pengawas
+                                                    Joko
                                                     <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading1">
                                                         <div class="card-body">
-                                                            Nama Petugas
+                                                            Diana
                                                         </div>
                                                     </div>
                                                 </td>
@@ -228,7 +228,7 @@
                                                 <td>3</td>
                                                 <td>3</td>
                                             </tr>
-                                           
+
                                         </tbody>
                                         <tbody>
                                             <tr role="row" class="odd">
@@ -236,10 +236,10 @@
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseTwo">
                                                         <i class="nc-icon nc-simple-add"></i>
                                                     </a>
-                                                    Nama Pengawas
+                                                    Farid
                                                     <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading1">
                                                         <div class="card-body">
-                                                            Nama Petugas
+                                                            Irawan
                                                         </div>
                                                     </div>
                                                 </td>
@@ -264,7 +264,7 @@
                                                 <td>3</td>
                                                 <td>3</td>
                                             </tr>
-                                           
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -295,5 +295,196 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Employee
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>NAMA PENGAWAS</th>
+                            <th>TARGET</th>
+                            <th>REALISASI</th>
+                            <th>PERSENTASE</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+                            <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td>Joko</td>
+                            <td>12</td>
+                            <td>-</td>
+                            <td>-</td>
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="12" class="hiddenRow">
+                                <div class="accordian-body collapse" id="demo1">
+                                    <table class="table table-striped">
+                                        <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+                                            <td>NO</td>
+                                            <td><b>NAMA PETUGAS<b></td>
+                                            <td><b>TARGET<b></td>
+                                            <td><b>REALISASI<b></td>
+                                            <td><b>PERSENTASE<b></td>
+
+                                        </tr>
+                                        <tbody>
+                                            <td>1</td>
+                                            <td>Diana Safira</td>
+                                            <td>3</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        <tbody>
+                                            <td>2</td>
+                                            <td>Budi Susanto</td>
+                                            <td>3</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        <tbody>
+                                            <td>3</td>
+                                            <td>Mala Oktavia</td>
+                                            <td>3</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        <tbody>
+                                            <td>4</td>
+                                            <td>Sinta Laila</td>
+                                            <td>3</td>
+                                            <td>-</td>
+                                            <td>-</td>
+
+
+                        </tr>
+
+
+
+                        <tr>
+                            <td colspan="12" class="hiddenRow">
+                                <div class="accordian-body collapse" id="demo10">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <td><a href="#"> XPTO 1</a></td>
+                                                <td>XPTO 2</td>
+                                                <td>Obs</td>
+                                            </tr>
+                                            <tr>
+                                                <th>item 1</th>
+                                                <th>item 2</th>
+                                                <th>item 3 </th>
+                                                <th>item 4</th>
+                                                <th>item 5</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>item 1</td>
+                                                <td>item 2</td>
+                                                <td>item 3</td>
+                                                <td>item 4</td>
+                                                <td>item 5</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-default btn-sm">
+                                                        <i class="glyphicon glyphicon-cog"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Scrum Master</td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Back-end</td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Front-end</td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+            </td>
+            </tr>
+
+
+
+            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+                <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                <td>Silvio</td>
+                <td>Santos</td>
+                <td>São Paulo</td>
+                <td>SP</td>
+                <td> new</td>
+            </tr>
+            <tr>
+                <td colspan="6" class="hiddenRow">
+                    <div id="demo2" class="accordian-body collapse">Demo2</div>
+                </td>
+            </tr>
+            <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+                <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                <td>John</td>
+                <td>Doe</td>
+                <td>Dracena</td>
+                <td>SP</td>
+                <td> New</td>
+            </tr>
+            <tr>
+                <td colspan="6" class="hiddenRow">
+                    <div id="demo3" class="accordian-body collapse">Demo3 sadasdasdasdasdas</div>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
 </div>
 @endsection
