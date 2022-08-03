@@ -19,7 +19,9 @@
                         </span>
                     </div>
             </form>
+            @if (Auth::user()->role=='admin')
             <a class="btn btn-success" href="{{ route('pengawas.create') }}"> Tambah Data</a>
+            @endif
         </div>
         <div class="card-body">
             @if ($message = Session::get('success'))
@@ -52,15 +54,16 @@
                             <th>
                                 NIP
                             </th>
+                            @if (Auth::user()->role=='admin')
                             <th class="text-right">
                                 Actions
                             </th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($pengawas as $data)
                         <tr>
-
                             <td>{{ $data->nama_lengkap }}</td>
                             <td>{{ $data->no_ktp }}</td>
                             <td>{{ $data->jenis_kelamin }}</td>
@@ -68,8 +71,7 @@
                             <td>{{ $data->no_tlp }}</td>
                             <td>{{ $data->alamat }}</td>
                             <td>{{ $data->nip }}</td>
-
-
+                            @if (Auth::user()->role=='admin')
                             <td>
                                 <form action="{{ route('pengawas.destroy',$data->id) }}" method="POST">
                                     <a href="{{ route('pengawas.edit',$data->id) }}">
@@ -84,16 +86,13 @@
                                     </button>
                                 </form>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- Form Search -->
-
     </div>
-    <!-- End Form Search -->
-</div>
 </div>
 @endsection
