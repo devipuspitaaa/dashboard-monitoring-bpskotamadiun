@@ -30,6 +30,12 @@
         <a href="/dashboard" class="simple-text logo-normal">
           OPERA CANDI
         </a>
+        <div class="navbar-minimize">
+<button id="minimizeSidebar" class="btn btn-icon btn-round">
+<i class="nc-icon nc-minimal-right text-center visible-on-sidebar-mini"></i>
+<i class="nc-icon nc-minimal-left text-center visible-on-sidebar-regular"></i>
+</button>
+</div>
       </div>
       <div class="sidebar-wrapper">
         <!-- MENU -->
