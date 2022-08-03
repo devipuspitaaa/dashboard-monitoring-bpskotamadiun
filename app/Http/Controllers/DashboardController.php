@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Dashboard;
 namespace App\Http\Controllers;
 
+use App\Models\Dashboard;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -21,8 +23,22 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard');
+        $dashboard = Dashboard::with('dashboard')->get();
+
+        $dashboard = Dashboard::where([
+            ['nama_pengawas', '!=', Null],
+            [function ($query) use ($request) {
+                if (($term = $request->term)) {
+                    $query->orWhere('nama_pengawas', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+            ->orderBy('id', 'asc')
+            ->simplePaginate(1000);
+
+        return view('dashboard.index', compact('dashboard'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }
