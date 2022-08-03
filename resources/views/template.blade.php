@@ -35,8 +35,8 @@
         <!-- MENU -->
         <ul class="nav">
 
-          <li>
-            <a href="/home">
+          <li class="nav-item {{ set_active('home') }}">
+            <a href="{{ route('home')}}">
               <i class="nc-icon nc-chart-bar-32"></i>
               <p>Dashboard</p>
             </a>
@@ -47,19 +47,19 @@
               <p>Data Statistik</p>
             </a>
           </li>
-          <li>
-            <a href="/form">
+          <li class="nav-item {{ set_active(['form.index', 'form.create']) }}">
+            <a href="{{ route('form.index')}}">
               <i class="nc-icon nc-paper"></i>
               <p>Input Survei</p>
             </a>
           </li>
-          <li>
-            <a href="/target">
+          <li class="nav-item {{ set_active(['target.index', 'target.create']) }}">
+            <a href="{{ route('target.index')}}">
               <i class="nc-icon nc-align-center"></i>
               <p>Input Target</p>
             </a>
           </li>
-          <li>
+          <li class="nav-item {{ set_active(['pengawas.index','pengawas.create', 'petugas.index', 'petugas.create']) }}">
             <a data-toggle="collapse" href="#componentsExamples" aria-expanded="true" class="">
               <i class="nc-icon nc-layout-11"></i>
               <p>
@@ -68,13 +68,13 @@
             </a>
             <div class="collapse show" id="componentsExamples">
               <ul class="nav">
-                <li>
-                  <a href="/pengawas">
+                <li class="nav-item {{ set_active(['pengawas.index', 'pengawas.create']) }}">
+                  <a href="{{ route('pengawas.index')}}">
                     <span class="sidebar-normal"> Biodata Pengawas </span>
                   </a>
                 </li>
-                <li>
-                  <a href="/petugas">
+                <li class="nav-item {{ set_active(['petugas.index', 'petugas.create']) }}">
+                  <a href="{{ route('petugas.index')}}">
                     <span class="sidebar-normal"> Biodata Petugas </span>
                   </a>
                 </li>
