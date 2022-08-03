@@ -73,10 +73,30 @@
                                             <tr role="row" class="odd">
                                                 <td tabindex="0" class="sorting_1" class="card-header" role="tab" id="heading1">
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapseOne">
-                                                        Nama Pengawas
-                                                        <i class="nc-icon nc-minimal-down"></i>
+                                                        <i class="nc-icon nc-simple-add"></i>
                                                     </a>
+                                                    Nama Pengawas
                                                     <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1">
+                                                        <div class="card-body">
+                                                            Nama Petugas
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>3</td>
+                                                <td>Tokyo</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar <strong>bg-success</strong>" role="progressbar" style="width: 65%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">650%</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr role="row" class="even">
+                                                <td tabindex="0" class="sorting_1" class="card-header" role="tab" id="heading1">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapseTwo">
+                                                        <i class="nc-icon nc-simple-add"></i>
+                                                    </a>
+                                                    Nama Pengawas
+                                                    <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading1">
                                                         <div class="card-body">
                                                             Nama Petugas
                                                         </div>
@@ -89,12 +109,6 @@
                                                         <div class="progress-bar <strong>bg-success</strong>" role="progressbar" style="width: 90%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
                                                     </div>
                                                 </td>
-                                            </tr>
-                                            <tr role="row" class="even">
-                                                <td class="sorting_1" tabindex="0">Angelica Ramos</td>
-                                                <td>Chief Executive Officer (CEO)</td>
-                                                <td>London</td>
-                                                <td>47</td>
                                             </tr>
                                         </tbody>
                                     </table>
