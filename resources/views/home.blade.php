@@ -224,7 +224,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tabel Entry Raelisasi</h3>
+                    <h3 class="card-title">Tabel Entry Realisasi</h3>
                 </div>
                 <div class="card-body">
                     <div class="toolbar">
@@ -285,15 +285,15 @@
                                                             <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
                                                                 <td>NO</td>
                                                                 <td><b>NAMA PETUGAS<b></td>
-                                                                <td><b>S<b></td>
                                                                 <td><b>M<b></td>
                                                                 <td><b>T<b></td>
                                                                 <td><b>W<b></td>
+                                                                <td><b>T<b></td>
                                                                 <td><b>F<b></td>
-                                                                <td><b>S<b></td>
                                                                 <td><b>M<b></td>
                                                                 <td><b>T<b></td>
                                                                 <td><b>W<b></td>
+                                                                <td><b>T<b></td>
                                                                 <td><b>F<b></td>
                                                             </tr>
                                                             <tbody>
@@ -377,15 +377,15 @@
                                                             <tr data-toggle="collapse" data-target="#demo4" class="accordion-toggle">
                                                                 <td>NO</td>
                                                                 <td><b>NAMA PETUGAS<b></td>
-                                                                <td><b>S<b></td>
                                                                 <td><b>M<b></td>
                                                                 <td><b>T<b></td>
                                                                 <td><b>W<b></td>
+                                                                <td><b>T<b></td>
                                                                 <td><b>F<b></td>
-                                                                <td><b>S<b></td>
                                                                 <td><b>M<b></td>
                                                                 <td><b>T<b></td>
                                                                 <td><b>W<b></td>
+                                                                <td><b>T<b></td>
                                                                 <td><b>F<b></td>
 
                                                             </tr>
