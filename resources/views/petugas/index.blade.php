@@ -19,8 +19,9 @@
                         </span>
                     </div>
             </form>
+            @if (Auth::user()->role=='admin')
             <a class="btn btn-success my-2" href="{{ route('petugas.create') }}"> Tambah Data</a>
-
+            @endif
         </div>
         <div class="card-body">
             @if ($message = Session::get('success'))
@@ -53,9 +54,11 @@
                             <th>
                                 NIP
                             </th>
+                            @if (Auth::user()->role=='admin')
                             <th class="text-right">
                                 Actions
                             </th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -69,8 +72,7 @@
                             <td>{{ $data->no_tlp }}</td>
                             <td>{{ $data->alamat }}</td>
                             <td>{{ $data->nip }}</td>
-
-
+                            @if (Auth::user()->role=='admin')
                             <td>
                                 <form action="{{ route('petugas.destroy',$data->id) }}" method="POST">
                                     <a href="{{ route('petugas.edit',$data->id) }}">
@@ -85,6 +87,7 @@
                                     </button>
                                 </form>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

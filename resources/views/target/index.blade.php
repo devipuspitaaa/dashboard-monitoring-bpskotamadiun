@@ -19,7 +19,12 @@
                         </span>
                     </div>
             </form>
+            @if (Auth::user()->role=='pengawas')
             <a class="btn btn-success" href="{{ route('target.create') }}"> Tambah Data</a>
+            @endif
+            @if (Auth::user()->role=='admin')
+            <a class="btn btn-success" href="{{ route('target.create') }}"> Tambah Data</a>
+            @endif
         </div>
         <div class="card-body">
             @if ($message = Session::get('success'))
@@ -33,13 +38,19 @@
                     <th>Tanggal</th>
                     <th>Nama Petugas</th>
                     <th>Jumlah Target</th>
+                    @if (Auth::user()->role=='pengawas')
                     <th width="250px">Action</th>
+                    @endif
+                    @if (Auth::user()->role=='admin')
+                    <th width="250px">Action</th>
+                    @endif
                 </tr>
                 @foreach ($targets as $data)
                 <tr>
                     <td>{{ $data->tanggal }}</td>
                     <td>{{ $data->nama_petugas}}</td>
                     <td>{{ $data->target }}</td>
+                    @if (Auth::user()->role=='pengawas')
                     <td>
                         <form action="{{ route('target.destroy',$data->id) }}" method="POST">
                             <a href="{{ route('target.edit',$data->id) }}">
@@ -53,16 +64,26 @@
                                 <i class="fa fa-times"></i>
                             </button>
                         </form>
+                    </td>
+                    @endif
 
-                        {{-- <form action="{{ route('target.destroy',$data->id) }}" method="POST">
-
-                            <a class="btn btn-primary" href="{{ route('target.edit',$data->id) }}">Edit</a>
+                    @if (Auth::user()->role=='admin')
+                    <td>
+                        <form action="{{ route('target.destroy',$data->id) }}" method="POST">
+                            <a href="{{ route('target.edit',$data->id) }}">
+                                <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                            </a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
+                            <button type="submit" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
+                                <i class="fa fa-times"></i>
+                            </button>
                         </form>
-                        --}}
                     </td>
+                    @endif
+
                 </tr>
                 @endforeach
             </table>
