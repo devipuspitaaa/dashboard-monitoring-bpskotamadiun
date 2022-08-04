@@ -8,7 +8,7 @@
     <div class="card ">
         <div class="card-header ">
             <center>
-                <h4 class="card-title"><strong>Tambah Data Target Petugas</strong></h4>
+                <h4 class="card-title"><strong>Tambah Data Realisasi Target Petugas</strong></h4>
             </center>
         </div>
         <div class="card-body">
@@ -39,11 +39,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label class="col-sm-2 col-form-label">Jumlah Target</label>
+                        <label class="col-sm-2 col-form-label">Jumlah Realisasi/hari</label>
                         <div class="col-sm-10">
                             <div class="form-group">
                                 <input type="target" name="target" class="form-control" id="target"
-                                    aria-describedby="target" placeholder="masukkan jumlah target" required>
+                                    aria-describedby="target" placeholder="masukkan jumlah realisasi/hari" required>
                             </div>
                         </div>
                     </div>

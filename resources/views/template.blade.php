@@ -55,7 +55,7 @@
           <li class="nav-item {{ set_active(['target.index', 'target.create']) }}">
             <a href="{{ route('target.index')}}">
               <i class="nc-icon nc-align-center"></i>
-              <p>Input Target</p>
+              <p>Input Realisasi Target</p>
             </a>
           </li>
           <li class="nav-item {{ set_active(['pengawas.index','pengawas.create', 'petugas.index', 'petugas.create']) }}">

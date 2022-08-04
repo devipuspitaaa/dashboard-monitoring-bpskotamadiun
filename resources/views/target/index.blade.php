@@ -37,7 +37,7 @@
                 <tr>
                     <th>Tanggal</th>
                     <th>Nama Petugas</th>
-                    <th>Jumlah Target</th>
+                    <th>Jumlah Realisasi/hari</th>
                     @if (Auth::user()->role=='pengawas')
                     <th width="250px">Action</th>
                     @endif
