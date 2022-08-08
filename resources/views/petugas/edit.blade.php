@@ -41,8 +41,24 @@
 
                     <div class="form-group">
                         <label for="jenis_kelamin">Jenis Kelamin</label>
-                        <input type="jenis_kelamin" name="jenis_kelamin" class="form-control" id="jenis_kelamin"
-                            value="{{$data->jenis_kelamin}}" aria-describedby="jenis_kelamin">
+                        <div class="col-sm-10 checkbox-radios">
+                            <div class="form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin"
+                                        value="L" required>
+                                    Laki - Laki
+                                    <span class="form-check-sign"></span>
+                                </label>
+                            </div>
+                            <div class="form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin"
+                                        value="P" required>
+                                    Perempuan
+                                    <span class="form-check-sign"></span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
