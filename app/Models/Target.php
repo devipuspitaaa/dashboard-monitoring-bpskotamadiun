@@ -16,9 +16,9 @@ class Target extends Model
     protected $fillable = [
         'id',
         'tanggal',
-        'nama_petugas',
-        'target',
         'petugas_id',
+        'target',
+
     ];
     public function petugas()
     {

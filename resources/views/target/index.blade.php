@@ -48,7 +48,7 @@
                 @foreach ($targets as $data)
                 <tr>
                     <td>{{ $data->tanggal }}</td>
-                    <td>{{ $data->nama_petugas}}</td>
+                    <td>{{ $data->petugas->nama_lengkap}}</td>
                     <td>{{ $data->target }}</td>
                     @if (Auth::user()->role=='pengawas')
                     <td>

@@ -32,10 +32,10 @@ class TargetController extends Controller
         $targets = Target::with('petugas')->get();
 
         $targets = Target::where([
-            ['nama_petugas', '!=', Null],
+            ['petugas_id', '!=', Null],
             [function ($query) use ($request) {
                 if (($term = $request->term)) {
-                    $query->orWhere('nama_petugas', 'LIKE', '%' . $term . '%')->get();
+                    $query->orWhere('petugas_id', 'LIKE', '%' . $term . '%')->get();
                 }
             }]
         ])
@@ -76,24 +76,24 @@ class TargetController extends Controller
     {
         // $targets = Target::Where('id', $id)->first();
         // $petugas = Petugas::Where('id', $id)->first();
-
+        $petugas = Petugas::all();
         $request->validate([
             // 'id' => 'required',
-            'tanggal' => Carbon::now(),
-            'nama_petugas' => 'required',
-            'target' => 'required',
+            'Tanggal' => Carbon::now(),
+            'Nama Petugas' => 'required',
+            'Target' => 'required',
             // 'petugas_id' => 'required',
         ]);
 
         $targets = new Target;
         // $targets->id = $request->get('id');
         $targets->tanggal = Carbon::now();
-        $targets->nama_petugas = $request->get('nama_petugas');
-        $targets->target = $request->get('target');
+        // $targets->petugas_id = $request->get('nama_petugas');
+        $targets->target = $request->get('Target');
         $targets->save();
 
         $petugas = new Petugas;
-        $petugas->nama_petugas = $request->get('Petugas');
+        $petugas->id = $request->get('Nama Petugas');
 
         //fungsi eloquent untuk menambah data dengan relasi belongsTO
         $targets->petugas()->associate($petugas);

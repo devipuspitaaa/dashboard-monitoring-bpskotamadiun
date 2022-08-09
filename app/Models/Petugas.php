@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Target;
+use App\Models\Pengawas;
 
 class Petugas extends Model
 {
     use HasFactory;
-    protected $table = 'Petugas';
+    protected $table = 'petugas';
     // public $timestamps = false;
     protected $primaryKey = 'id';
 
@@ -26,5 +27,9 @@ class Petugas extends Model
 
     public function target(){
         return $this->hasMany(Target::class);
+    }
+
+    public function pengawas(){
+        return $this->belongsTo(Pengawas::class);
     }
 }

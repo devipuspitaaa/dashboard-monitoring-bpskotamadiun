@@ -14,6 +14,7 @@ class RelasiPetugasTargetTable extends Migration
     public function up()
     {
         Schema::table('targets', function (Blueprint $table) {
+            $table->dropColumn('nama_petugas'); //menghapus nama kolom
             $table->unsignedBigInteger('petugas_id')->nullable(); //menambahkan kolom petugas_id
             $table->foreign('petugas_id')->references('id')->on('petugas'); //menambahkan foreign key di kolom petugas_id
         });
@@ -27,6 +28,7 @@ class RelasiPetugasTargetTable extends Migration
     public function down()
     {
         Schema::table('targets', function (Blueprint $table) {
+            $table->string('nama_petugas');
             $table->dropForeign(['petugas_id']);
         });
     }

@@ -17,9 +17,3 @@ function set_active($route)
         }
     }
 }
-
-function set_warning($route){
-    if (Route::is($route)) {
-        return 'warning';
-    }
-}

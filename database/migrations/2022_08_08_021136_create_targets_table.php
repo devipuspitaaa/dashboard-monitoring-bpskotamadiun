@@ -32,3 +32,4 @@ class CreateTargetsTable extends Migration
         Schema::dropIfExists('targets');
     }
 }
+

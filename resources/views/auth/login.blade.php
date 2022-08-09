@@ -15,9 +15,9 @@
                     <div class="sign-up-content">
                         <center>
                             <div class="form-group">
-                                <input type="button" class="btn btn-info btn-lg {{ set_warning('login') }}" id="btn_admin" onclick="changeLogin('login')" value="Admin">&nbsp;&nbsp;&nbsp;
-                                <input type="button" class="btn btn-info btn-lg {{ set_warning('login') }}" id="btn_pengawas" onclick="changeLogin('login')" value="Pengawas">&nbsp;&nbsp;&nbsp;
-                                <input type="button" class="btn btn-info btn-lg {{ set_warning('login') }}" id="btn_lurah" onclick="changeLogin('login')" value="Lurah">
+                                <input type="button" class="btn btn-info btn-lg" id="btn_admin" onclick="changeLogin('login')" value="Admin">&nbsp;&nbsp;&nbsp;
+                                <input type="button" class="btn btn-info btn-lg" id="btn_pengawas" onclick="changeLogin('login')" value="Pengawas">&nbsp;&nbsp;&nbsp;
+                                <input type="button" class="btn btn-info btn-lg" id="btn_lurah" onclick="changeLogin('login')" value="Lurah">
                             </div>
                         </center>
                     </div>

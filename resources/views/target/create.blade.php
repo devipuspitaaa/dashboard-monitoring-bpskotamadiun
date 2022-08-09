@@ -32,7 +32,7 @@
                                 <select name="nama_petugas" id="nama_petugas" class="form-control">
                                     <option selected disabled>pilih petugas</option>
                                     @foreach($petugas as $petugas)
-                                    <option value="{{$petugas->nama_lengkap}}">{{$petugas->nama_lengkap}}</option>
+                                    <option value="{{$petugas->id}}">{{$petugas->nama_lengkap}}</option>
                                     @endforeach
                                 </select>
                             </div>
