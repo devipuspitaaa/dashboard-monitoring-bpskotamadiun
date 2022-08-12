@@ -68,8 +68,8 @@
                         <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control"
-                                    id="tempat_tanggal_lahir" aria-describedby="tempat_tanggal_lahir"
+                                <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control datepicker"
+                                    id="tanggal" aria-describedby="tempat_tanggal_lahir"
                                     placeholder="masukkan tanggal lahir" required>
                             </div>
                         </div>

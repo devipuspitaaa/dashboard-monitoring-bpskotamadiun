@@ -15,6 +15,11 @@
   <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/paper-dashboard.css?v=2.0.1') }}" rel="stylesheet" />
   <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
+
+  
+  <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
 </head>
 
 <body class="">
@@ -200,18 +205,41 @@
       </footer>
     </div>
   </div>
-  <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
-  <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
-  <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
   <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
   <script src="{{ asset('assets/js/paper-dashboard.min.js') }}?v=2.0.1" type="text/javascript"></script>
   <script src="{{ asset('assets/demo/demo.js') }}"></script>
+  
+  <script src="https://demos.creative-tim.com/paper-dashboard-2-pro/assets/js/plugins/moment.min.js"></script>
+  <script src="https://demos.creative-tim.com/paper-dashboard-2-pro/assets/js/plugins/bootstrap-datetimepicker.js"></script>
+  
+  
+  
   <script>
     $(document).ready(function() {
       demo.initChartsPages();
+    });
+  </script>
+  <script>
+    $(function() {
+
+      $('.datepicker').datetimepicker({
+                format: 'MM/DD/YYYY',
+                icons: {
+                    time: "fa fa-clock-o",
+                    date: "fa fa-calendar",
+                    up: "fa fa-chevron-up",
+                    down: "fa fa-chevron-down",
+                    previous: 'fa fa-chevron-left',
+                    next: 'fa fa-chevron-right',
+                    today: 'fa fa-screenshot',
+                    clear: 'fa fa-trash',
+                    close: 'fa fa-remove'
+                }
+            });
     });
   </script>
 </body>

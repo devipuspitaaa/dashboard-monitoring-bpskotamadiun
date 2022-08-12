@@ -5,6 +5,9 @@
 
 {{-- Input Data section begin --}}
 <div class="col-md-12">
+
+    <div id="message"></div>
+
     <div class="card ">
         <div class="card-header ">
             <center>
@@ -105,4 +108,39 @@
     </div>
 
     {{-- Input Data section end --}}
+
+
+    <script>
+
+        $(function() {
+            // total target / t.petugas / jangka waktu
+
+            function perhitungan() {
+
+                let total_target   = $("input[name='total_target']").val();
+                let total_petugas  = $("input[name='total_petugas']").val();
+                let jh_penyelesaian = $("input[name='jh_penyelesaian']").val();
+
+                if ( (total_target > 0) && (total_petugas > 0) && (jh_penyelesaian > 0) ) {
+
+                    let hasil = total_target / total_petugas / jh_penyelesaian;
+                    $('input[name="target_petugas"]').val( hasil );
+
+                    $('#message').fadeOut();
+
+                } else {
+
+                    let html = `<div class="alert alert-danger">Pemebritauan<br><small>Harap masukkan nilai yang valid</small></div>`;
+                    $('#message').html(html).hide().fadeIn(1000);
+                }
+            }
+
+
+            $('input[name="total_target"]').keyup(function() { perhitungan(); });
+            $('input[name="total_petugas"]').keyup(function() { perhitungan(); });
+            $('input[name="jh_penyelesaian"]').keyup(function() { perhitungan(); });
+
+            
+        });
+    </script>
     @endsection

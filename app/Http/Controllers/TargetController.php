@@ -74,38 +74,26 @@ class TargetController extends Controller
      */
     public function store(Request $request)
     {
-        // $targets = Target::Where('id', $id)->first();
-        // $petugas = Petugas::Where('id', $id)->first();
         $petugas = Petugas::all();
         $request->validate([
-            // 'id' => 'required',
-            'Tanggal' => Carbon::now(),
-            'Nama Petugas' => 'required',
-            'Target' => 'required',
-            // 'petugas_id' => 'required',
+            'tanggal' => Carbon::now(),
+            'petugas_id' => 'required',
+            'target' => 'required',
         ]);
 
         $targets = new Target;
-        // $targets->id = $request->get('id');
         $targets->tanggal = Carbon::now();
-        // $targets->petugas_id = $request->get('nama_petugas');
-        $targets->target = $request->get('Target');
+        $targets->target = $request->get('target');
+        $targets->petugas_id = $request->get('petugas_id');
         $targets->save();
 
         $petugas = new Petugas;
-        $petugas->id = $request->get('Nama Petugas');
+        $petugas->id = $request->get('petugas_id');
 
         //fungsi eloquent untuk menambah data dengan relasi belongsTO
         $targets->petugas()->associate($petugas);
         $targets->save();
 
-
-        // Target::create([
-        //     'id' => $request->id,
-        //     'tanggal' => Carbon::now(),
-        //     'nama_petugas' => $request->nama_petugas,
-        //     'target' => $request->target,
-        // ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         // return 'Data Berhasil Ditambahkan';
         return redirect()->route('target.index')
@@ -133,8 +121,9 @@ class TargetController extends Controller
     public function edit($id)
     {
         $data = Target::find($id);
+        $petugas = Petugas::all();
 
-        return view('target.edit', ['data' => $data]);
+        return view('target.edit', ['data' => $data, 'petugas' => $petugas]);
     }
 
     /**
@@ -147,8 +136,8 @@ class TargetController extends Controller
     public function update(Request $request, $id)
     {
         $targets = Target::find($id);
-        $targets->tanggal = $request->tanggal;
-        $targets->nama_petugas = $request->nama_petugas;
+        // $targets->tanggal = $request->tanggal;
+        $targets->petugas_id = $request->petugas_id;
         $targets->target = $request->target;
         $targets->save();
 

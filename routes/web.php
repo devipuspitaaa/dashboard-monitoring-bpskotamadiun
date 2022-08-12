@@ -43,8 +43,14 @@ Route::get('inputPetugas', [App\Http\Controllers\PetugasController::class, 'crea
 Route::resource('pengawas', PengawasController::class);
 Route::get('inputPengawas', [App\Http\Controllers\PengawasController::class, 'create'])->name('inputPengawas');
 
+
+
+/** Target */
 Route::resource('target', TargetController::class);
+Route::post("target/update/{id}", [TargetController::class, 'update']);
 Route::get('inputTarget', [App\Http\Controllers\TargetController::class, 'create'])->name('inputTarget');
+
+/** End : Module Target */
 
 Route::get('inputForm', function () { return view('inputForm'); })->middleware('checkRole:admin');
 Route::get('inputPetugas', function () { return view('inputPetugas'); })->middleware('checkRole:admin');
