@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SurveiController;
 use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\PetugasController;
@@ -30,7 +31,8 @@ Auth::routes();
 Route::get('/tentang', function () {
     return view('tentang');
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get("/home", [HomeController::class, 'index'])->name("home");
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 

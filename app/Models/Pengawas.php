@@ -12,16 +12,16 @@ class Pengawas extends Model
     public $timestamps = false;
     protected $primaryKey = 'id';
 
-    // protected $fillable = [
-    //     'id',
-    //     'nama_lengkap',
-    //     'no_ktp',
-    //     'jenis_kelamin',
-    //     'tempat_tanggal_lahir',
-    //     'no_tlp',
-    //     'alamat',
-    //     'nip',
-    // ];
+    protected $fillable = [
+        
+        'nama_lengkap',
+        'no_ktp',
+        'jenis_kelamin',
+        'tempat_tanggal_lahir',
+        'no_tlp',
+        'alamat',
+        'nip',
+    ];
 
     public function petugas(){
         return $this->hasMany(Petugas::class);

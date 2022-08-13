@@ -52,7 +52,7 @@ class PengawasController extends Controller
     public function store(Request $request)
     {
         Pengawas::create([
-            'id' => $request->id,
+
             'nama_lengkap' => $request->nama_lengkap,
             'no_ktp' => $request->no_ktp,
             'jenis_kelamin' => $request->jenis_kelamin,
