@@ -37,6 +37,9 @@
                                 Nama Lengkap
                             </th>
                             <th>
+                                Nama Pengawas
+                            </th>
+                            <th>
                                 No KTP
                             </th>
                             <th>
@@ -64,8 +67,8 @@
                     <tbody>
                         @foreach ($petugas as $data)
                         <tr>
-
                             <td>{{ $data->nama_lengkap }}</td>
+                            <td>{{ $data->pengawas->nama_lengkap }}</td>
                             <td>{{ $data->no_ktp }}</td>
                             <td>{{ $data->jenis_kelamin }}</td>
                             <td>{{ $data->tempat_tanggal_lahir }}</td>

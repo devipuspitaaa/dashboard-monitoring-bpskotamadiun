@@ -44,15 +44,7 @@ class TargetController extends Controller
 
         return view('target.index', compact('targets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-        // $paginate = Target::orderBy('id', 'asc')->paginate(5); // Pagination menampilkan 5 data
-
-        // if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-        //     $targets = Target::where('petugas_id', 'like', "%" . $request->search . "%")->paginate(5);
-        // } else { // Jika tidak melakukan pencarian judul
-        //     //fungsi eloquent menampilkan data menggunakan pagination
-        //     $targets = Target::orderBy('id', 'asc')->paginate(5); // Pagination menampilkan 5 data
-        // }
-        // return view('target.index', ['target' => $targets,'paginate' => $paginate]);
+        
     }
 
     /**

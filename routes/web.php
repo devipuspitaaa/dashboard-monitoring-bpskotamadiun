@@ -39,8 +39,11 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 Route::resource('form',  SurveiController::class);
 Route::get('inputForm', [App\Http\Controllers\SurveiController::class, 'create'])->name('inputForm');
 
+/** Petugas */
 Route::resource('petugas', PetugasController::class);
+Route::post("petugas/update/{id}", [PetugasController::class, 'update']);
 Route::get('inputPetugas', [App\Http\Controllers\PetugasController::class, 'create'])->name('inputPetugas');
+/** End : Module Petugas */
 
 Route::resource('pengawas', PengawasController::class);
 Route::get('inputPengawas', [App\Http\Controllers\PengawasController::class, 'create'])->name('inputPengawas');

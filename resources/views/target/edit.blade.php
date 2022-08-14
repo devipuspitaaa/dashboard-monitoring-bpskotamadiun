@@ -1,20 +1,14 @@
 @extends('template')
 @section('content')
 <br /><br />
-
-
-
-
-
-
-
+<br /><br />
 
 {{-- Input Data section begin --}}
 <div class="col-md-12">
     <div class="card ">
         <div class="card-header ">
             <center>
-                <h4 class="card-title"><strong>Tambah Data Realisasi Target Petugas</strong></h4>
+                <h4 class="card-title"><strong>Edit Data Realisasi Target Petugas</strong></h4>
             </center>
         </div>
         <div class="card-body">
@@ -59,9 +53,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 @endsection

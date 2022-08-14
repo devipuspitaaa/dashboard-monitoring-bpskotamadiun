@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Petugas;
+
 namespace App\Http\Controllers;
 
 use App\Models\Petugas;
+use App\Models\Pengawas;
 use Illuminate\Http\Request;
 
 class PetugasController extends Controller
@@ -19,13 +20,21 @@ class PetugasController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $petugas = Petugas::where('nama_lengkap', 'like', "%" . $request->search . "%")->paginate(5);
-        } else { // Jika tidak melakukan pencarian judul
-            //fungsi eloquent menampilkan data menggunakan pagination
-            $petugas = Petugas::orderBy('id', 'desc')->paginate(1000); // Pagination menampilkan 5 data
-        }
-        return view('petugas.index', compact('petugas'));
+        $petugas = Petugas::with('pengawas')->get();
+
+        $petugas = Petugas::where([
+            ['pengawas_id', '!=', Null],
+            [function ($query) use ($request) {
+                if (($term = $request->term)) {
+                    $query->orWhere('pengawas_id', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+            ->orderBy('id', 'asc')
+            ->simplePaginate(1000);
+
+        return view('petugas.index', compact('petugas'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -35,7 +44,8 @@ class PetugasController extends Controller
      */
     public function create()
     {
-        return view('petugas.create');
+        $pengawas = Pengawas::all();
+        return view('petugas.create', ['pengawas' => $pengawas]);
     }
 
     /**
@@ -46,16 +56,46 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        Petugas::create([
-            'id' => $request->id,
-            'nama_lengkap' => $request->nama_lengkap,
-            'no_ktp' => $request->no_ktp,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'tempat_tanggal_lahir' => $request->tempat_tanggal_lahir,
-            'no_tlp' => $request->no_tlp,
-            'alamat' => $request->alamat,
-            'nip' => $request->nip,
+        $pengawas = Pengawas::all();
+        $request->validate([
+            'nama_lengkap' => 'required',
+            'pengawas_id' => 'required',
+            'no_ktp' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_tanggal_lahir' => 'required',
+            'no_tlp' => 'required',
+            'alamat' => 'required',
+            'nip' => 'required',
+            
         ]);
+
+        $petugas = new Petugas;
+        $petugas->nama_lengkap = $request->get('nama_lengkap');
+        $petugas->pengawas_id = $request->get('pengawas_id');
+        $petugas->no_ktp = $request->get('no_ktp');
+        $petugas->jenis_kelamin = $request->get('jenis_kelamin');
+        $petugas->tempat_tanggal_lahir = $request->get('tempat_tanggal_lahir');
+        $petugas->no_tlp = $request->get('no_tlp');
+        $petugas->alamat = $request->get('alamat');
+        $petugas->nip = $request->get('nip');
+        
+
+        $pengawas = new Pengawas;
+        $pengawas->id = $request->get('pengawas_id');
+
+        $petugas->pengawas()->associate($pengawas);
+        $petugas->save();
+
+        // Petugas::create([
+        //     // 'id' => $request->id,
+        //     'nama_lengkap' => $request->nama_lengkap,
+        //     'no_ktp' => $request->no_ktp,
+        //     'jenis_kelamin' => $request->jenis_kelamin,
+        //     'tempat_tanggal_lahir' => $request->tempat_tanggal_lahir,
+        //     'no_tlp' => $request->no_tlp,
+        //     'alamat' => $request->alamat,
+        //     'nip' => $request->nip,
+        // ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         // return 'Data Berhasil Ditambahkan';
         return redirect()->route('petugas.index')
@@ -83,8 +123,8 @@ class PetugasController extends Controller
     public function edit($id)
     {
         $data = Petugas::find($id);
-
-        return view('petugas.edit', ['data' => $data]);
+        $pengawas = Pengawas::all();
+        return view('petugas.edit', ['data' => $data, 'pengawas' => $pengawas]);
     }
 
     /**
@@ -97,13 +137,14 @@ class PetugasController extends Controller
     public function update(Request $request, $id)
     {
         $petugas = Petugas::find($id);
-        $petugas-> nama_lengkap = $request->nama_lengkap;
-        $petugas-> no_ktp = $request->no_ktp;
-        $petugas-> jenis_kelamin = $request->jenis_kelamin;
-        $petugas-> tempat_tanggal_lahir = $request->tempat_tanggal_lahir;
-        $petugas-> no_tlp = $request->no_tlp;
-        $petugas-> alamat = $request->alamat;
-        $petugas-> nip = $request->nip;
+        $petugas->nama_lengkap = $request->nama_lengkap;
+        $petugas->pengawas_id = $request->pengawas_id;
+        $petugas->no_ktp = $request->no_ktp;
+        $petugas->jenis_kelamin = $request->jenis_kelamin;
+        $petugas->tempat_tanggal_lahir = $request->tempat_tanggal_lahir;
+        $petugas->no_tlp = $request->no_tlp;
+        $petugas->alamat = $request->alamat;
+        $petugas->nip = $request->nip;
         $petugas->save();
 
         return redirect()->route('petugas.index')
