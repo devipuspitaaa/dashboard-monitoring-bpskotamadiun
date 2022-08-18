@@ -34,6 +34,21 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Jenis Survei</label>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <select name="survei_id" id="survei_id" class="form-control">
+                                    <option selected disabled>pilih survei</option>
+                                    @foreach($survei as $survei)
+                                    <option value="{{$survei->id}}">{{$survei->nama_survei}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <label class="col-sm-2 col-form-label">No. KTP</label>
                         <div class="col-sm-10">
@@ -68,9 +83,7 @@
                         <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control"
-                                    id="tempat_tanggal_lahir" aria-describedby="tempat_tanggal_lahir"
-                                    placeholder="masukkan tanggal lahir" required>
+                                <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control datepicker" id="tanggal" aria-describedby="tempat_tanggal_lahir" placeholder="masukkan tanggal lahir" required>
                             </div>
                         </div>
                     </div>

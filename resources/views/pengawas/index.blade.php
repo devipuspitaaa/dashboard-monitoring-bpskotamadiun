@@ -37,6 +37,9 @@
                                 Nama Lengkap
                             </th>
                             <th>
+                                Jenis Survei
+                            </th>
+                            <th>
                                 No KTP
                             </th>
                             <th>
@@ -65,6 +68,7 @@
                         @foreach ($pengawas as $data)
                         <tr>
                             <td>{{ $data->nama_lengkap }}</td>
+                            <td>{{ $data->survei->nama_survei }}</td>
                             <td>{{ $data->no_ktp }}</td>
                             <td>{{ $data->jenis_kelamin }}</td>
                             <td>{{ $data->tempat_tanggal_lahir }}</td>

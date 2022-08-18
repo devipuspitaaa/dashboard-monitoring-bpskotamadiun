@@ -1,9 +1,8 @@
 <?php
 
-use App\Models\Pengawas;
 namespace App\Http\Controllers;
-
 use App\Models\Pengawas;
+use App\Models\Survei;
 use Illuminate\Http\Request;
 
 class PengawasController extends Controller
@@ -24,13 +23,29 @@ class PengawasController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->has('search')) { // Jika ingin melakukan pencarian judul
-            $pengawas = Pengawas::where('nama_lengkap', 'like', "%" . $request->search . "%")->paginate(5);
-        } else { // Jika tidak melakukan pencarian judul
-            //fungsi eloquent menampilkan data menggunakan pagination
-            $pengawas = Pengawas::orderBy('id', 'desc')->paginate(1000); // Pagination menampilkan 5 data
-        }
-        return view('pengawas.index', compact('pengawas'));
+        $pengawas = Pengawas::with('survei')->get();
+
+        $pengawas = Pengawas::where([
+            ['survei_id', '!=', Null],
+            [function ($query) use ($request) {
+                if (($term = $request->term)) {
+                    $query->orWhere('survei_id', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+        ->orderBy('id', 'asc')
+            ->simplePaginate(1000);
+
+        return view('pengawas.index', compact('pengawas'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        // if ($request->has('search')) { // Jika ingin melakukan pencarian judul
+        //     $pengawas = Pengawas::where('nama_lengkap', 'like', "%" . $request->search . "%")->paginate(5);
+        // } else { // Jika tidak melakukan pencarian judul
+        //     //fungsi eloquent menampilkan data menggunakan pagination
+        //     $pengawas = Pengawas::orderBy('id', 'desc')->paginate(1000); // Pagination menampilkan 5 data
+        // }
+        // return view('pengawas.index', compact('pengawas'));
     }
 
     /**
@@ -40,7 +55,8 @@ class PengawasController extends Controller
      */
     public function create()
     {
-        return view('pengawas.create');
+        $survei = Survei::all();
+        return view('pengawas.create', ['survei' => $survei]);
     }
 
     /**
@@ -51,16 +67,43 @@ class PengawasController extends Controller
      */
     public function store(Request $request)
     {
-        Pengawas::create([
-
-            'nama_lengkap' => $request->nama_lengkap,
-            'no_ktp' => $request->no_ktp,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'tempat_tanggal_lahir' => $request->tempat_tanggal_lahir,
-            'no_tlp' => $request->no_tlp,
-            'alamat' => $request->alamat,
-            'nip' => $request->nip,
+        $survei = Survei::all();
+        $request->validate([
+            'nama_lengkap' => 'required',
+            'survei_id' => 'required',
+            'no_ktp' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_tanggal_lahir' => 'required',
+            'no_tlp' => 'required',
+            'alamat' => 'required',
+            'nip' => 'required',
         ]);
+        $pengawas = new Pengawas();
+        $pengawas->nama_lengkap = $request->get('nama_lengkap');
+        $pengawas->survei_id = $request->get('survei_id');
+        $pengawas->no_ktp = $request->get('no_ktp');
+        $pengawas->jenis_kelamin = $request->get('jenis_kelamin');
+        $pengawas->tempat_tanggal_lahir = $request->get('tempat_tanggal_lahir');
+        $pengawas->no_tlp = $request->get('no_tlp');
+        $pengawas->alamat = $request->get('alamat');
+        $pengawas->nip = $request->get('nip');
+
+        $survei = new Survei();
+        $survei->id = $request->get('survei_id');
+
+        $pengawas->survei()->associate($survei);
+        $pengawas->save();
+
+        // Pengawas::create([
+
+        //     'nama_lengkap' => $request->nama_lengkap,
+        //     'no_ktp' => $request->no_ktp,
+        //     'jenis_kelamin' => $request->jenis_kelamin,
+        //     'tempat_tanggal_lahir' => $request->tempat_tanggal_lahir,
+        //     'no_tlp' => $request->no_tlp,
+        //     'alamat' => $request->alamat,
+        //     'nip' => $request->nip,
+        // ]);
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         // return 'Data Berhasil Ditambahkan';
         return redirect()->route('pengawas.index')
@@ -88,8 +131,8 @@ class PengawasController extends Controller
     public function edit($id)
     {
         $data = Pengawas::find($id);
-
-        return view('pengawas.edit', ['data' => $data]);
+        $survei = Survei::all();
+        return view('pengawas.edit', ['data' => $data, 'survei' => $survei]);
     }
 
     /**

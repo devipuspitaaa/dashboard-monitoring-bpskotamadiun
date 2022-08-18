@@ -45,9 +45,11 @@ Route::post("petugas/update/{id}", [PetugasController::class, 'update']);
 Route::get('inputPetugas', [App\Http\Controllers\PetugasController::class, 'create'])->name('inputPetugas');
 /** End : Module Petugas */
 
+/** Petugas */
 Route::resource('pengawas', PengawasController::class);
+Route::post("pengawas/update/{id}", [PengawasController::class, 'update']);
 Route::get('inputPengawas', [App\Http\Controllers\PengawasController::class, 'create'])->name('inputPengawas');
-
+/** End : Module Petugas */
 
 
 /** Target */

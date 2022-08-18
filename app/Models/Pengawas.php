@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Survei;
 
 class Pengawas extends Model
 {
@@ -13,8 +14,9 @@ class Pengawas extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        
+        'id',
         'nama_lengkap',
+        'survei_id',
         'no_ktp',
         'jenis_kelamin',
         'tempat_tanggal_lahir',
@@ -25,5 +27,9 @@ class Pengawas extends Model
 
     public function petugas(){
         return $this->hasMany(Petugas::class);
+    }
+
+    public function survei(){
+        return $this->belongsTo(Survei::class);
     }
 }
