@@ -59,14 +59,14 @@
                         <div class="col-sm-10 checkbox-radios">
                             <div class="form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-Laki" required>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" required>
                                     Laki - Laki
                                     <span class="form-check-sign"></span>
                                 </label>
                             </div>
                             <div class="form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" required>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" required>
                                     Perempuan
                                     <span class="form-check-sign"></span>
                                 </label>
