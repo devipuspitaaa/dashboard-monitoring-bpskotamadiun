@@ -29,9 +29,7 @@
                         <label class="col-sm-2 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="nama_lengkap" name="nama_lengkap" class="form-control" id="nama_lengkap"
-                                    value="{{ $data->nama_lengkap }}" aria-describedby="nama_lengkap"
-                                    placeholder="Masukkan nama lengkap" required>
+                                <input type="nama_lengkap" name="nama_lengkap" class="form-control" id="nama_lengkap" value="{{ $data->nama_lengkap }}" aria-describedby="nama_lengkap" placeholder="Masukkan nama lengkap" required>
                             </div>
                         </div>
                     </div>
@@ -53,27 +51,23 @@
                         <label class="col-sm-2 col-form-label">No KTP</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="no_ktp" name="no_ktp" class="form-control" id="no_ktp"
-                                    value="{{ $data->no_ktp }}" aria-describedby="no_ktp"
-                                    placeholder="Masukkan nomor KTP" required>
+                                <input type="no_ktp" name="no_ktp" class="form-control" id="no_ktp" value="{{ $data->no_ktp }}" aria-describedby="no_ktp" placeholder="Masukkan nomor KTP" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <label for="col-sm-2 col-form-label">Jenis Kelamin</label>
+                        <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-10 checkbox-radios">
                             <div class="form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin"
-                                        value="Laki-Laki" required>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-laki" required>
                                     Laki - Laki
                                     <span class="form-check-sign"></span>
                                 </label>
                             </div>
                             <div class="form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin"
-                                        value="Perempuan" required>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" required>
                                     Perempuan
                                     <span class="form-check-sign"></span>
                                 </label>
@@ -81,13 +75,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label class="col-sm-2 col-form-label">Tempat Tanggal Lahir</label>
+                        <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control"
-                                    id="tempat_tanggal_lahir" value="{{ $data->tempat_tanggal_lahir }}"
-                                    aria-describedby="tempat_tanggal_lahir" placeholder="Masukkan tempat tanggal lahir"
-                                    required>
+                                <input type="tempat_tanggal_lahir" name="tempat_tanggal_lahir" class="form-control datepicker" id="tanggal" value="{{ $data->tempat_tanggal_lahir }}" aria-describedby="tempat_tanggal_lahir" placeholder="masukkan tanggal lahir" required>
                             </div>
                         </div>
                     </div>
@@ -95,9 +86,7 @@
                         <label class="col-sm-2 col-form-label">Nomor Telepon</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="no_tlp" name="no_tlp" class="form-control" id="no_tlp"
-                                    value="{{ $data->no_tlp }}" aria-describedby="no_tlp"
-                                    placeholder="Masukkan nomor telepon" required>
+                                <input type="no_tlp" name="no_tlp" class="form-control" id="no_tlp" value="{{ $data->no_tlp }}" aria-describedby="no_tlp" placeholder="Masukkan nomor telepon" required>
                             </div>
                         </div>
                     </div>
@@ -105,9 +94,7 @@
                         <label class="col-sm-2 col-form-label">Alamat</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="alamat" name="alamat" class="form-control" id="alamat"
-                                    value="{{ $data->alamat }}" aria-describedby="alamat" placeholder="Masukkan alamat"
-                                    required>
+                                <input type="alamat" name="alamat" class="form-control" id="alamat" value="{{ $data->alamat }}" aria-describedby="alamat" placeholder="Masukkan alamat" required>
                             </div>
                         </div>
                     </div>
@@ -115,8 +102,7 @@
                         <label class="col-sm-2 col-form-label">NIP</label>
                         <div class="col-sm-10">
                             <div class="form-group">
-                                <input type="nip" name="nip" class="form-control" id="nip" value="{{ $data->nip }}"
-                                    aria-describedby="nip" placeholder="Masukkan NIP" required>
+                                <input type="nip" name="nip" class="form-control" id="nip" value="{{ $data->nip }}" aria-describedby="nip" placeholder="Masukkan NIP" required>
                             </div>
                         </div>
                     </div>
