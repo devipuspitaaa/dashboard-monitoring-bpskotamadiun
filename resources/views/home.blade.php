@@ -4,6 +4,30 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header ">
+                    <h2 class="card-title text-center">Dashboard Survei Kelurahan Kanigoro</h2>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Jenis Survei</label>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <select name="survei_id" id="survei_id" class="form-control">
+                                    <option selected disabled>--pilih survei--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body ">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Tabel Komulatif</h3>
@@ -15,9 +39,7 @@
                         <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="datatable_length"><label>Show <select
-                                                name="datatable_length" aria-controls="datatable"
-                                                class="form-control form-control-sm">
+                                    <div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control form-control-sm">
                                                 <option value="10">10</option>
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
@@ -25,9 +47,7 @@
                                             </select> entries</label></div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
-                                    <div id="datatable_filter" class="dataTables_filter"><label><input type="search"
-                                                class="form-control form-control-sm" placeholder="Search records"
-                                                aria-controls="datatable"></label></div>
+                                    <div id="datatable_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search records" aria-controls="datatable"></label></div>
                                 </div>
                             </div>
                             <div class="row">
@@ -108,9 +128,7 @@
                                                             aria-valuemin="0" aria-valuemax="100">
 
                                                         </div> --}}
-                                                        <div class="progress-bar  progress-bar-animated bg-{{ $color }}"
-                                                            role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                                            aria-valuemax="100" style="width: {{ $progress }}%">
+                                                        <div class="progress-bar  progress-bar-animated bg-{{ $color }}" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ $progress }}%">
                                                             <b>{{ number_format($persen, 2).' %' }}</b>
                                                         </div>
 
@@ -121,8 +139,7 @@
                                                 <td colspan="12" class="hiddenRow">
                                                     <div class="accordian-body collapse" id="demo1">
                                                         <table class="table table-borderless">
-                                                            <tr data-toggle="collapse" data-target="#demo1"
-                                                                class="accordion-toggle">
+                                                            <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
                                                                 <td>NO</td>
                                                                 <td><b>NAMA PETUGAS<b></td>
                                                                 <td><b>TARGET<b></td>
@@ -181,10 +198,7 @@
                                                                     }
                                                                     @endphp
                                                                     <div class="progress">
-                                                                        <div class="progress-bar  progress-bar-animated {{ $color }}"
-                                                                            role="progressbar" aria-valuenow="75"
-                                                                            aria-valuemin="0" aria-valuemax="100"
-                                                                            style="width: {{ $progress }}%">
+                                                                        <div class="progress-bar  progress-bar-animated {{ $color }}" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ $progress }}%">
                                                                             <b>{{ number_format($persen, 2).' %' }}</b>
                                                                         </div>
                                                                     </div>
@@ -223,9 +237,7 @@
                         <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="datatable_length"><label>Show <select
-                                                name="datatable_length" aria-controls="datatable"
-                                                class="form-control form-control-sm">
+                                    <div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control form-control-sm">
                                                 <option value="10">10</option>
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
@@ -233,9 +245,7 @@
                                             </select> entries</label></div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
-                                    <div id="datatable_filter" class="dataTables_filter"><label><input type="search"
-                                                class="form-control form-control-sm" placeholder="Search records"
-                                                aria-controls="datatable"></label></div>
+                                    <div id="datatable_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search records" aria-controls="datatable"></label></div>
                                 </div>
                             </div>
                             <div class="row">
@@ -254,9 +264,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach ( $dt_entry AS $kolom )
-                                            <tr data-toggle="collapse"
-                                                data-target="#demo-{{ $kolom['infopengawas']->id }}"
-                                                class="accordion-toggle">
+                                            <tr data-toggle="collapse" data-target="#demo-{{ $kolom['infopengawas']->id }}" class="accordion-toggle">
                                                 <td><i class="nc-icon nc-simple-add"></i></td>
                                                 <td>{{ $kolom['infopengawas']->nama_lengkap }}</td>
 
@@ -287,12 +295,9 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="12" class="hiddenRow">
-                                                    <div class="accordian-body collapse"
-                                                        id="demo-{{ $kolom['infopengawas']->id }}">
+                                                    <div class="accordian-body collapse" id="demo-{{ $kolom['infopengawas']->id }}">
                                                         <table class="table table-borderless">
-                                                            <tr data-toggle="collapse"
-                                                                data-target="#demo-{{ $kolom['infopengawas']->id }}"
-                                                                class="accordion-toggle">
+                                                            <tr data-toggle="collapse" data-target="#demo-{{ $kolom['infopengawas']->id }}" class="accordion-toggle">
                                                                 <td>NO</td>
                                                                 <td><b>NAMA PETUGAS<b></td>
 
