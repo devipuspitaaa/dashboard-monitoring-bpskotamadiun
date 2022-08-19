@@ -48,7 +48,6 @@ class SurveiController extends Controller
     {
         Survei::create([
             'id' => $request->id,
-            'nama_kelurahan' => $request->nama_kelurahan,
             'nama_survei' => $request->nama_survei,
             'total_target' => $request->total_target,
             'total_petugas' => $request->total_petugas,
@@ -98,7 +97,6 @@ class SurveiController extends Controller
     public function update(Request $request, $id)
     {
         $form = Survei::find($id);
-        $form->nama_kelurahan = $request->nama_kelurahan;
         $form->nama_survei = $request->nama_survei;
         $form->total_target = $request->total_target;
         $form->total_petugas = $request->total_petugas;

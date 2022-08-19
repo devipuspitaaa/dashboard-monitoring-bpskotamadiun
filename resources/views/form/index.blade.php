@@ -35,9 +35,6 @@
                     <thead class="text-primary">
                         <tr>
                             <th>
-                                Nama Kelurahan
-                            </th>
-                            <th>
                                 Nama Survei
                             </th>
                             <th>
@@ -65,8 +62,6 @@
                     <tbody>
                         @foreach ($form as $data)
                         <tr>
-
-                            <td>{{ $data->nama_kelurahan }}</td>
                             <td>{{ $data->nama_survei }}</td>
                             <td>{{ $data->total_target }}</td>
                             <td>{{ $data->total_petugas }}</td>

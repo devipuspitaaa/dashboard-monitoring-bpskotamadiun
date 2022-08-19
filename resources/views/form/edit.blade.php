@@ -25,15 +25,6 @@
                 @csrf
                 @method('PUT')
                 <div class="featured__controls">
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Nama Kelurahan</label>
-                        <div class="col-sm-10">
-                            <div class="form-group">
-                                <input type="nama_kelurahan" name="nama_kelurahan" class="form-control" id="nama_kelurahan" value="{{$data->nama_kelurahan}}" aria-describedby="nama_kelurahan" placeholder="masukkan nama keluharan" required>
-
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <label class="col-sm-2 col-form-label">Nama Survei</label>

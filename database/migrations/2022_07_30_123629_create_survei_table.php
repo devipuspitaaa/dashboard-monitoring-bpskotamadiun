@@ -15,7 +15,6 @@ class CreateSurveiTable extends Migration
     {
         Schema::create('survei', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kelurahan');
             $table->string('nama_survei');
             $table->integer('total_target');
             $table->integer('total_petugas');

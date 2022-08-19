@@ -28,7 +28,6 @@
         <div class="col-xl-12 col-md-2">
     <table class="table table-bordered">
         <tr>
-            <th>Nama Kelurahan</th>
             <th>Nama Survei</th>
             <th>Total Target</th>
             <th>Total Petugas</th>
@@ -39,8 +38,6 @@
         </tr>
         @foreach ($form as $data)
             <tr>
-
-            <td>{{ $data->nama_kelurahan }}</td>
             <td>{{ $data->nama_survei }}</td>
             <td>{{ $data->total_target }}</td>
             <td>{{ $data->total_petugas }}</td>

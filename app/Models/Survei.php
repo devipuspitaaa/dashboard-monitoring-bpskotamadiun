@@ -15,7 +15,6 @@ class Survei extends Model
 
     protected $fillable = [
         'id',
-        'nama_kelurahan',
         'nama_survei',
         'total_target',
         'total_petugas',
