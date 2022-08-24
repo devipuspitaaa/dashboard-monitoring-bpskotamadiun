@@ -358,4 +358,62 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card ">
+                <div class="card-header ">
+                    <h5 class="card-title">Email Statistics</h5>
+                    <p class="card-category">Last Campaign Performance</p>
+                </div>
+                <div class="card-body ">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <canvas id="chartEmail" class="ct-chart ct-perfect-fourth chartjs-render-monitor" width="370" height="242" style="display: block; width: 185px; height: 121px;"></canvas>
+                </div>
+                <div class="card-footer ">
+                    <div class="legend">
+                        <i class="fa fa-circle text-primary"></i> Open
+                    </div>
+                    <hr>
+                    <div class="stats">
+                        <i class="fa fa-calendar"></i> Number of emails sent
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card ">
+                <div class="card-header ">
+                    <h5 class="card-title">Users Behavior</h5>
+                    <p class="card-category">24 Hours performance</p>
+                </div>
+                <div class="card-body ">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <canvas id="chartHours" width="858" height="214" style="display: block; width: 429px; height: 107px;" class="chartjs-render-monitor"></canvas>
+                </div>
+                <div class="card-footer ">
+                    <hr>
+                    <div class="stats">
+                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
