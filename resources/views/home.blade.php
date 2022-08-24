@@ -364,8 +364,8 @@
         <div class="col-md-4">
             <div class="card ">
                 <div class="card-header ">
-                    <h5 class="card-title">Email Statistics</h5>
-                    <p class="card-category">Last Campaign Performance</p>
+                    <h5 class="card-title">Pengawas</h5>
+                    <p class="card-category">Grafik Setiap Pengawas</p>
                 </div>
                 <div class="card-body ">
                     <div class="chartjs-size-monitor">
@@ -392,7 +392,7 @@
         <div class="col-md-8">
             <div class="card ">
                 <div class="card-header ">
-                    <h5 class="card-title">Users Behavior</h5>
+                    <h5 class="card-title">Grafik Komulatif</h5>
                     <p class="card-category">24 Hours performance</p>
                 </div>
                 <div class="card-body ">
@@ -411,6 +411,62 @@
                     <div class="stats">
                         <i class="fa fa-history"></i> Updated 3 minutes ago
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card car-chart">
+                <div class="card-header">
+                    <h5 class="card-title">Grafik Pengawas</h5>
+                    <p class="card-category">Grafik Pengawas Setiap Harinya</p>
+                </div>
+                <div class="card-body">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <canvas id="chartActivity" width="614" height="306" style="display: block; width: 307px; height: 153px;" class="chartjs-render-monitor"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="card ">
+            <div class="card-header ">
+                <h4 class="card-title">Grafik Petugas</h4>
+                <p class="card-category">Grafik Petugas Setiap Harinya</p>
+            </div>
+            <div class="card-body ">
+                <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                        <div class=""></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                        <div class=""></div>
+                    </div>
+                </div>
+                <canvas id="chartActivity" style="display: block; width: 307px; height: 153px;" width="614" height="306" class="chartjs-render-monitor"></canvas>
+            </div>
+            <div class="card-footer ">
+                <div class="legend">
+                    <i class="fa fa-circle text-info"></i> Tesla Model S
+                    <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                </div>
+                <hr>
+                <div class="stats">
+                    <i class="fa fa-check"></i> Data information certified
                 </div>
             </div>
         </div>

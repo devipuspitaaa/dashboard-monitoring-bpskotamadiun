@@ -209,12 +209,18 @@
   <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
   <script src="{{ asset('assets/js/paper-dashboard.min.js') }}?v=2.0.1" type="text/javascript"></script>
   <script src="{{ asset('assets/demo/demo.js') }}"></script>
+  <script src="{{ asset('/assets/js/plugins/chartjs.min.js') }}"></script>
 
   <script src="https://demos.creative-tim.com/paper-dashboard-2-pro/assets/js/plugins/moment.min.js"></script>
   <script src="https://demos.creative-tim.com/paper-dashboard-2-pro/assets/js/plugins/bootstrap-datetimepicker.js">
   </script>
 
-
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartPageCharts();
+    });
+  </script>
 
   <script>
     $(document).ready(function() {
