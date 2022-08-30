@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card ">
                 <div class="card-header ">
-                    <h2 class="card-title text-center">Dashboard Survei Kelurahan Kanigoro</h2>
+                    <h2 class="card-title text-center"><strong>Dashboard Survei Kelurahan Kanigoro</strong></h2>
                     
                 </div>
                 <div class="card-body ">
@@ -378,7 +378,7 @@
 
                     <hr>
                     <div class="stats">
-                        <i class="fa fa-calendar"></i> Total Target = {{ $dt_survey->total_target}}
+                        <i class="fa fa-history"></i> Total Target = {{ $dt_survey->total_target}}
                     </div>
                 </div>
             </div>
@@ -403,7 +403,7 @@
                 <div class="card-footer">
                     <hr>
                     <div class="stats">
-                        <i class="fa fa-history"></i> Total Target = {{ $dt_survey->total_target}}
+                        <i class="fa fa-calendar"></i> Total Target = {{ $dt_survey->total_target}}
                     </div>
                 </div>
             </div>
