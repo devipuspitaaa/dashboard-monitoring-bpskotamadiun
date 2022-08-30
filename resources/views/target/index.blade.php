@@ -10,15 +10,6 @@
                 <h2 class="card-title"><strong> DATA TARGET PETUGAS</strong> </h2>
             </center>
             <br>
-            <form>
-                <div class="float-left my-2 mx-3">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" name="search" placeholder="Cari...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-            </form>
             @if (Auth::user()->role=='pengawas')
             <a class="btn btn-success" href="{{ route('target.create') }}"> Tambah Data</a>
             @endif
@@ -32,8 +23,9 @@
                 <p>{{ $message }}</p>
             </div>
             @endif
-
-            <table class="table table-bordered">
+            <div class="table-responsive">
+            <table class="table" id="datatable">
+                <thead class="text-primary">
                 <tr>
                     <th>Tanggal</th>
                     <th>Nama Petugas</th>
@@ -45,6 +37,7 @@
                     <th width="250px">Action</th>
                     @endif
                 </tr>
+                </thead>
                 @foreach ($targets as $data)
                 <tr>
                     <td>{{ $data->tanggal }}</td>
@@ -87,6 +80,7 @@
                 </tr>
                 @endforeach
             </table>
+        </div>
         </div>
     </div>
     @endsection
