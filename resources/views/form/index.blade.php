@@ -9,15 +9,7 @@
             <center>
                 <h2 class="card-title"><strong> DATA SURVEI</strong> </h2>
             </center>
-            <form>
-                <div class="float-left my-2 mx-3">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" name="search" placeholder="Cari...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-            </form>
+            
             @if (Auth::user()->role=='admin')
             <a class="btn btn-success my-2" href="{{ route('form.create') }}"> Tambah Data</a>
             @endif
@@ -31,7 +23,7 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="datatable">
                     <thead class="text-primary">
                         <tr>
                             <th>
