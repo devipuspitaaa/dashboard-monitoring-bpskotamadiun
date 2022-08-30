@@ -60,14 +60,14 @@
                         <div class="col-sm-10 checkbox-radios">
                             <div class="form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-laki" required>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-laki" @php if ( $data->jenis_kelamin == "Laki-laki" ) echo 'checked'; @endphp>
                                     Laki - Laki
                                     <span class="form-check-sign"></span>
                                 </label>
                             </div>
                             <div class="form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" required>
+                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" @php if ( $data->jenis_kelamin == "Perempuan" ) echo 'checked'; @endphp>
                                     Perempuan
                                     <span class="form-check-sign"></span>
                                 </label>

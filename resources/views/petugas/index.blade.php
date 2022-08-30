@@ -30,7 +30,7 @@
             </div>
             @endif
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="datatable">
                     <thead class="text-primary">
                         <tr>
                             <th>
@@ -77,7 +77,7 @@
                             <td>{{ $data->nip }}</td>
                             @if (Auth::user()->role=='admin')
                             <td>
-                                <form action="{{ route('petugas.destroy',$data->id) }}" method="POST">
+                                <!-- <form action="{{ route('petugas.destroy',$data->id) }}" method="POST">
                                     <a href="{{ route('petugas.edit',$data->id) }}">
                                         <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
                                             <i class="fa fa-edit"></i>
@@ -88,7 +88,13 @@
                                     <button type="submit" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
                                         <i class="fa fa-times"></i>
                                     </button>
-                                </form>
+                                </form> -->
+                                <a href="{{ route('petugas.edit',$data->id) }}">
+                                    <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </a>
+                                <a href="{{ url('petugas/hapus/'. $data->id) }}" onclick="return confirm('Apakah anda ingin menghapus data ini ?')" class="btn btn-danger btn-icon btn-sm "><i class="fa fa-times"></i></a>
                             </td>
                             @endif
                         </tr>

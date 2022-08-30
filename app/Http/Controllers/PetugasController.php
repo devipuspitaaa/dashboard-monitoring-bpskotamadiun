@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Petugas;
 use App\Models\Pengawas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PetugasController extends Controller
 {
@@ -20,18 +21,18 @@ class PetugasController extends Controller
      */
     public function index(Request $request)
     {
-        $petugas = Petugas::with('pengawas')->get();
+        $petugas = Petugas::with('pengawas')->where('is_del', 0)->get();
 
-        $petugas = Petugas::where([
-            ['pengawas_id', '!=', Null],
-            [function ($query) use ($request) {
-                if (($term = $request->term)) {
-                    $query->orWhere('pengawas_id', 'LIKE', '%' . $term . '%')->get();
-                }
-            }]
-        ])
-            ->orderBy('id', 'asc')
-            ->simplePaginate(1000);
+        // $petugas = Petugas::where([
+        //     ['pengawas_id', '!=', Null],
+        //     [function ($query) use ($request) {
+        //         if (($term = $request->term)) {
+        //             $query->orWhere('pengawas_id', 'LIKE', '%' . $term . '%')->get();
+        //         }
+        //     }]
+        // ])
+        //     ->orderBy('id', 'asc')
+        //     ->simplePaginate(1000);
 
         return view('petugas.index', compact('petugas'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -159,7 +160,10 @@ class PetugasController extends Controller
      */
     public function destroy($id)
     {
-        Petugas::find($id)->delete();
+        // Petugas::find($id)->delete();
+
+        DB::table("petugas")->where('id', $id)->update(['is_del' => 1]);
+
         return redirect()->route('petugas.index')
             ->with('success', 'Data Berhasil Dihapus');
     }

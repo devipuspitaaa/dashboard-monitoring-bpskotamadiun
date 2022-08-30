@@ -43,6 +43,7 @@ Route::get('inputForm', [App\Http\Controllers\SurveiController::class, 'create']
 Route::resource('petugas', PetugasController::class);
 Route::post("petugas/update/{id}", [PetugasController::class, 'update']);
 Route::get('inputPetugas', [App\Http\Controllers\PetugasController::class, 'create'])->name('inputPetugas');
+Route::get('petugas/hapus/{id}', [PetugasController::class, 'destroy']);
 /** End : Module Petugas */
 
 /** Petugas */

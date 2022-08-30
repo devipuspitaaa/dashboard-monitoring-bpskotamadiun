@@ -7,16 +7,7 @@
             <div class="card ">
                 <div class="card-header ">
                     <h2 class="card-title text-center">Dashboard Survei Kelurahan Kanigoro</h2>
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Jenis Survei</label>
-                        <div class="col-sm-10">
-                            <div class="form-group">
-                                <select name="survei_id" id="survei_id" class="form-control">
-                                    <option selected disabled>--pilih survei--</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="card-body ">
                 </div>
@@ -37,19 +28,7 @@
                         <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
                         </div>
                         <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control form-control-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="-1">All</option>
-                                            </select> entries</label></div>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div id="datatable_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search records" aria-controls="datatable"></label></div>
-                                </div>
-                            </div>
+                            
                             <div class="row">
                                 <div class="col-sm-12 table-responsive">
                                     <table class="table table-condensed table-striped">
@@ -64,6 +43,9 @@
                                         </thead>
                                         <tbody>
 
+                                            @php 
+                                                $total_keseluruhan = 0
+                                            @endphp
                                             @foreach ( $dt_entry AS $kolom )
                                             <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
                                                 <td><i class="nc-icon nc-simple-add"></i></td>
@@ -98,6 +80,8 @@
                                                     // $survey = $dt_survey->jh_penyelesaian *
                                                     $dt_survey->target_petugas;
                                                     // }
+
+                                                    $total_keseluruhan += $total
 
                                                     @endphp
                                                     {{ $survey }}
@@ -235,23 +219,14 @@
                         <div id="accordion" role="tablist" aria-multiselectable="true" class="card-collapse">
                         </div>
                         <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control form-control-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="-1">All</option>
-                                            </select> entries</label></div>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div id="datatable_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search records" aria-controls="datatable"></label></div>
-                                </div>
-                            </div>
+                            
                             <div class="row">
                                 <div class="col-sm-12 table-responsive">
                                     <table class="table table-condensed table-striped">
 
+                                        @php 
+                                            $arrTotalRealisasi = array();
+                                        @endphp
                                         <thead>
                                             <tr>
                                                 <th></th>
@@ -308,9 +283,10 @@
 
 
                                                             </tr>
+                                                            
+                                                            
 
-                                                            @foreach ( $kolom['infopetugas'] AS $nomor => $kolom_petugas
-                                                            )
+                                                            @foreach ( $kolom['infopetugas'] AS $nomor => $kolom_petugas )
                                                             <tbody>
                                                                 <td>{{ $nomor + 1 }}</td>
                                                                 <td>{{ $kolom_petugas['petugas']->nama_lengkap }}</td>
@@ -323,11 +299,24 @@
                                                                 $target = 0;
                                                                 foreach ( $kolom_petugas['target'] AS $kolom_target ) {
 
-                                                                if ( $isi_kolom->tanggal == $kolom_target->tanggal ) {
+                                                                    if ( $isi_kolom->tanggal == $kolom_target->tanggal ) {
 
-                                                                $target = $kolom_target->target;
+                                                                        $target = $kolom_target->target;
+
+                                                                        if ( array_key_exists($kolom_target->tanggal, $arrTotalRealisasi) ) {
+
+                                                                            $arrTotalRealisasi[ $kolom_target->tanggal ] += $target;
+                                                                        } else {
+
+                                                                            $arrTotalRealisasi[ $kolom_target->tanggal ] = $target;
+                                                                        }
+
+                                                                        
+                                                                    }
                                                                 }
-                                                                }
+
+
+                                                                
 
                                                                 @endphp
 
@@ -348,6 +337,8 @@
 
                                             @endforeach
                                         </tbody>
+
+                                       
                                     </table>
                                 </div>
                             </div>
@@ -376,15 +367,18 @@
                             <div class=""></div>
                         </div>
                     </div>
-                    <canvas id="chartEmail" class="ct-chart ct-perfect-fourth chartjs-render-monitor" width="370" height="242" style="display: block; width: 185px; height: 121px;"></canvas>
+                    <canvas id="pie-chart" class="ct-chart ct-perfect-fourth chartjs-render-monitor" width="370" height="242" style="display: block; width: 185px; height: 121px;"></canvas>
                 </div>
                 <div class="card-footer ">
                     <div class="legend">
-                        <i class="fa fa-circle text-primary"></i> Open
+                        <i class="fa fa-circle text-primary"></i> Total Realisasi = {{ $total_keseluruhan }}
+                        <br>
+                        <i class="fa fa-circle text-danger"></i> Total Target yang Belum ter-Realisasi = {{ $dt_survey->total_target - $total_keseluruhan  }}
                     </div>
+
                     <hr>
                     <div class="stats">
-                        <i class="fa fa-calendar"></i> Number of emails sent
+                        <i class="fa fa-calendar"></i> Total Target = {{ $dt_survey->total_target}}
                     </div>
                 </div>
             </div>
@@ -393,7 +387,7 @@
             <div class="card ">
                 <div class="card-header ">
                     <h5 class="card-title">Grafik Komulatif</h5>
-                    <p class="card-category">24 Hours performance</p>
+                    <p class="card-category">Realisasi per-hari dari petugas</p>
                 </div>
                 <div class="card-body ">
                     <div class="chartjs-size-monitor">
@@ -404,12 +398,12 @@
                             <div class=""></div>
                         </div>
                     </div>
-                    <canvas id="chartHours" width="858" height="214" style="display: block; width: 429px; height: 107px;" class="chartjs-render-monitor"></canvas>
+                    <canvas id="bar-chart" width="858" height="214" style="display: block; width: 429px; height: 107px;" class="chartjs-render-monitor"></canvas>
                 </div>
-                <div class="card-footer ">
+                <div class="card-footer">
                     <hr>
                     <div class="stats">
-                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                        <i class="fa fa-history"></i> Total Target = {{ $dt_survey->total_target}}
                     </div>
                 </div>
             </div>
@@ -417,59 +411,193 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card car-chart">
-                <div class="card-header">
-                    <h5 class="card-title">Grafik Pengawas</h5>
-                    <p class="card-category">Grafik Pengawas Setiap Harinya</p>
-                </div>
-                <div class="card-body">
-                    <div class="chartjs-size-monitor">
-                        <div class="chartjs-size-monitor-expand">
-                            <div class=""></div>
-                        </div>
-                        <div class="chartjs-size-monitor-shrink">
-                            <div class=""></div>
-                        </div>
-                    </div>
-                    <canvas id="chartActivity" width="614" height="306" style="display: block; width: 307px; height: 153px;" class="chartjs-render-monitor"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="container">
-    <div class="col-md-12">
-        <div class="card ">
-            <div class="card-header ">
-                <h4 class="card-title">Grafik Petugas</h4>
-                <p class="card-category">Grafik Petugas Setiap Harinya</p>
-            </div>
-            <div class="card-body ">
-                <div class="chartjs-size-monitor">
-                    <div class="chartjs-size-monitor-expand">
-                        <div class=""></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink">
-                        <div class=""></div>
-                    </div>
-                </div>
-                <canvas id="chartActivity" style="display: block; width: 307px; height: 153px;" width="614" height="306" class="chartjs-render-monitor"></canvas>
-            </div>
-            <div class="card-footer ">
-                <div class="legend">
-                    <i class="fa fa-circle text-info"></i> Tesla Model S
-                    <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                </div>
-                <hr>
-                <div class="stats">
-                    <i class="fa fa-check"></i> Data information certified
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
+<script>
+
+    $(function() {
+
+        // pie chart
+        ctx = document.getElementById('pie-chart').getContext("2d");
+
+        myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [1, 2],
+                datasets: [{
+                    label: "Emails",
+                    pointRadius: 0,
+                    pointHoverRadius: 0,
+                    backgroundColor: [
+                        '#4acccd',
+                        '#ef8157'
+                    ],
+                    borderWidth: 0,
+                    data: [{{ $total_keseluruhan }}, {{ $dt_survey->total_target }}]
+                }]
+            },
+
+            options: {
+
+                legend: {
+                    display: false
+                },
+
+                pieceLabel: {
+                    render: 'percentage',
+                    fontColor: ['white'],
+                    precision: 2
+                },
+
+                tooltips: {
+                    enabled: false
+                },
+
+                scales: {
+                    yAxes: [{
+
+                        ticks: {
+                            display: false
+                        },
+                        gridLines: {
+                            drawBorder: false,
+                            zeroLineColor: "transparent",
+                            color: 'rgba(255,255,255,0.05)'
+                        }
+
+                    }],
+
+                    xAxes: [{
+                        barPercentage: 1.6,
+                        gridLines: {
+                            drawBorder: false,
+                            color: 'rgba(255,255,255,0.1)',
+                            zeroLineColor: "transparent"
+                        },
+                        ticks: {
+                            display: false,
+                        }
+                    }]
+                },
+            }
+        });
+
+
+
+        // - - - - 
+        // kumulatif
+        // ctx = document.getElementById('chartHours').getContext("2d");
+        let chartColor = "#FFFFFF";
+        ctx = document.getElementById('bar-chart').getContext("2d");
+        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#80b6f4');
+        gradientStroke.addColorStop(1, chartColor);
+        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+        gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
+        myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+
+                    @php
+                        foreach( $dt_statistik AS $isi ) {
+
+                            echo "'".date('d-m-Y', strtotime($isi['tanggal']))."',";
+                        }
+                    @endphp
+                ],
+                datasets: [{
+                    label: "Target",
+                    borderColor: '#fcc468',
+                    fill: true,
+                    backgroundColor: '#fcc468',
+                    hoverBorderColor: '#fcc468',
+                    borderWidth: 8,
+                    data: [
+
+                        @php
+                        foreach( $dt_statistik AS $isi ) {
+
+                            echo "'".($isi['target'])."',";
+                        }
+                        @endphp
+                    ],
+                }, {
+                    label: "Realisasi",
+                    borderColor: '#4cbdd7',
+                    fill: true,
+                    backgroundColor: '#4cbdd7',
+                    hoverBorderColor: '#4cbdd7',
+                    borderWidth: 8,
+                    data: [
+
+                        @php
+                        foreach( $dt_statistik AS $isi ) {
+
+                            echo "'".$isi['realisasi']."',";
+                        }
+                        @endphp
+                    ],
+                }]
+            },
+            options: {
+                tooltips: {
+                    tooltipFillColor: "rgba(0,0,0,0.5)",
+                    tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+                    tooltipFontSize: 14,
+                    tooltipFontStyle: "normal",
+                    tooltipFontColor: "#fff",
+                    tooltipTitleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+                    tooltipTitleFontSize: 14,
+                    tooltipTitleFontStyle: "bold",
+                    tooltipTitleFontColor: "#fff",
+                    tooltipYPadding: 6,
+                    tooltipXPadding: 6,
+                    tooltipCaretSize: 8,
+                    tooltipCornerRadius: 6,
+                    tooltipXOffset: 10,
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "#9f9f9f",
+                            fontStyle: "bold",
+                            beginAtZero: true,
+                            maxTicksLimit: 5,
+                            padding: 20
+                        },
+                        gridLines: {
+                            zeroLineColor: "transparent",
+                            display: true,
+                            drawBorder: false,
+                            color: '#9f9f9f',
+                        }
+                    }],
+                    xAxes: [{
+                        barPercentage: 0.4,
+                        gridLines: {
+                            zeroLineColor: "white",
+                            display: false,
+                            drawBorder: false,
+                            color: 'transparent',
+                        },
+                        ticks: {
+                            padding: 20,
+                            fontColor: "#9f9f9f",
+                            fontStyle: "bold"
+                        }
+                    }]
+                }
+            }
+        });
+
+
+
+    })
+</script>
+
 @endsection
