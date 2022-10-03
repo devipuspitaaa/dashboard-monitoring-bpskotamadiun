@@ -39,7 +39,7 @@
         <div class="container">
             <div class="masthead-heading">SELAMAT DATANG di Portal Monitoring & Evaluasi</div>
             <div class="masthead-heading">OPERA CANDI</div>
-            <div class="masthead-subheading">(Optimalisasi Petugas Kelurahan Cinta Statistik Kota Madiun)</div>
+            <div class="masthead-subheading">(Optimalisasi Pendampingan Petugas Kelurahan Cinta Statistik Kota Madiun)</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="{{ route('login') }}">Mulai</a>
         </div>
     </header> <!-- End Home -->

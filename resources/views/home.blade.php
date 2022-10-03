@@ -1,12 +1,12 @@
-@extends('template')
-@section('content')
+    @extends('template')
+    @section('content')
 <br /><br /><br /><br />
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card ">
                 <div class="card-header ">
-                    <h2 class="card-title text-center"><strong>Dashboard Survei Kelurahan Kanigoro</strong></h2>
+                    <h2 class="card-title text-center"><strong>Dashboard Survei Kelurahan Josenan</strong></h2>
                     
                 </div>
                 <div class="card-body ">
